@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Qtdequipamento:</strong>
+  <%= @item.qtdequipamento %>
+</p>
+
+<p>
+  <strong>Qtdtubulacao:</strong>
+  <%= @item.qtdtubulacao %>
+</p>
+
+<p>
+  <strong>Qtdextra:</strong>
+  <%= @item.qtdextra %>
+</p>
+
+<p>
+  <strong>Tubulacao:</strong>
+  <%= @item.tubulacao %>
+</p>
+
+<p>
+  <strong>Extra:</strong>
+  <%= @item.extra %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @item.valor %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

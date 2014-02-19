@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @equipamento.descricao %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @equipamento.marca %>
+</p>
+
+<p>
+  <strong>Fornecedor:</strong>
+  <%= @equipamento.fornecedor %>
+</p>
+
+<p>
+  <strong>Potencia:</strong>
+  <%= @equipamento.potencia %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @equipamento.tipo %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @equipamento.modelo %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @equipamento.info %>
+</p>
+
+<%= link_to 'Edit', edit_equipamento_path(@equipamento) %> |
+<%= link_to 'Back', equipamentos_path %>

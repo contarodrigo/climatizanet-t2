@@ -1,0 +1,37 @@
+<h1>Listing items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Qtdequipamento</th>
+      <th>Qtdtubulacao</th>
+      <th>Qtdextra</th>
+      <th>Tubulacao</th>
+      <th>Extra</th>
+      <th>Valor</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.qtdequipamento %></td>
+        <td><%= item.qtdtubulacao %></td>
+        <td><%= item.qtdextra %></td>
+        <td><%= item.tubulacao %></td>
+        <td><%= item.extra %></td>
+        <td><%= item.valor %></td>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>

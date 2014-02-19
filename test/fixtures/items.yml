@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qtdequipamento: 1.5
+  qtdtubulacao: 1.5
+  qtdextra: 1.5
+  tubulacao: MyString
+  extra: MyString
+  valor: 9.99
+
+two:
+  qtdequipamento: 1.5
+  qtdtubulacao: 1.5
+  qtdextra: 1.5
+  tubulacao: MyString
+  extra: MyString
+  valor: 9.99

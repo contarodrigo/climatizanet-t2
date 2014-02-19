@@ -1,0 +1,17 @@
+<%= form_for(@orcamento) do |f| %>
+  <% if @orcamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orcamento.errors.count, "error") %> prohibited this orcamento from being saved:</h2>
+
+      <ul>
+      <% @orcamento.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
