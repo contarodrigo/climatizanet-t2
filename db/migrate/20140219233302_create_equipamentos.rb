@@ -9,6 +9,9 @@ class CreateEquipamentos < ActiveRecord::Migration
       t.string :modelo
       t.text :info
 
+      t.add_index :descricao unique: true
+      t.add_index :potencia 
+
       t.timestamps
     end
   end
