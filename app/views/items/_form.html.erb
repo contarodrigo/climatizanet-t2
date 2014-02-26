@@ -14,26 +14,32 @@
   <div class="field">
     <%= f.label :qtdequipamento %><br>
     <%= f.text_field :qtdequipamento %>
+    <%= error_tag @item, :qtdequipamento %>
   </div>
   <div class="field">
     <%= f.label :qtdtubulacao %><br>
     <%= f.text_field :qtdtubulacao %>
+    <%= error_tag @item, :qtdtubulacao %>
   </div>
   <div class="field">
     <%= f.label :qtdextra %><br>
     <%= f.text_field :qtdextra %>
+    <%= error_tag @item, :qtdextra %>
   </div>
   <div class="field">
     <%= f.label :tubulacao %><br>
     <%= f.text_field :tubulacao %>
+    <%= error_tag @item, :tubulacao %>
   </div>
   <div class="field">
     <%= f.label :extra %><br>
     <%= f.text_field :extra %>
+    <%= error_tag @item, :extra %>
   </div>
   <div class="field">
     <%= f.label :valor %><br>
     <%= f.text_field :valor %>
+    <%= error_tag @item, :valor %>
   </div>
   <div class="actions">
     <%= f.submit %>

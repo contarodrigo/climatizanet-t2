@@ -14,10 +14,12 @@
   <div class="field">
     <%= f.label :data %><br>
     <%= f.date_select :data %>
+    <%= error_tag @agenda, :data %>
   </div>
   <div class="field">
     <%= f.label :hora %><br>
     <%= f.time_select :hora %>
+    <%= error_tag @agenda, :hora %>
   </div>
   <div class="actions">
     <%= f.submit %>

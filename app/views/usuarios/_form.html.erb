@@ -14,14 +14,17 @@
   <div class="field">
     <%= f.label :nome %><br>
     <%= f.text_field :nome %>
+    <%= error_tag @usuario, :nome %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
+    <%= error_tag @usuario, :email %>
   </div>
   <div class="field">
     <%= f.label :password %><br>
     <%= f.text_field :password %>
+    <%= error_tag @usuario, :password %>
   </div>
   <div class="actions">
     <%= f.submit %>
