@@ -28,7 +28,7 @@ class EquipamentosController < ApplicationController
 
     respond_to do |format|
       if @equipamento.save
-        format.html { redirect_to @equipamento, notice: 'Equipamento was successfully created.' }
+        format.html { redirect_to @equipamento, notice: 'Equipamento registrado com sucesso!' }
         format.json { render action: 'show', status: :created, location: @equipamento }
       else
         format.html { render action: 'new' }

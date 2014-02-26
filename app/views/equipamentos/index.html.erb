@@ -1,12 +1,12 @@
-<h1>Listing equipamentos</h1>
+<h1>Equipamentos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Descricao</th>
+      <th>Descrição</th>
       <th>Marca</th>
       <th>Fornecedor</th>
-      <th>Potencia</th>
+      <th>Potência</th>
       <th>Tipo</th>
       <th>Modelo</th>
       <th>Info</th>
@@ -26,9 +26,9 @@
         <td><%= equipamento.tipo %></td>
         <td><%= equipamento.modelo %></td>
         <td><%= equipamento.info %></td>
-        <td><%= link_to 'Show', equipamento %></td>
-        <td><%= link_to 'Edit', edit_equipamento_path(equipamento) %></td>
-        <td><%= link_to 'Destroy', equipamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', equipamento %></td>
+        <td><%= link_to 'Editar', edit_equipamento_path(equipamento) %></td>
+        <td><%= link_to 'Excluir', equipamento, method: :delete, data: { confirm: 'Você realmente deseja excluir?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Equipamento', new_equipamento_path %>
+<%= link_to 'Novo equipamento', new_equipamento_path %>
