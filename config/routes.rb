@@ -11,6 +11,12 @@ ClimatizanetT2::Application.routes.draw do
 
   resources :usuarios
 
+  #A ação raiz, ouroot,éaação que é executada quando vamos ao endereço raiz do site,
+  #por exemplo,http://www.colcho.net,ouhttp://localhost:3000/, assim sera redirecionado para home_controller
+  root 'home#index'
+
+  #limitar a visualizacao do perfil somente para show, algo eh visto no capitulo 5
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
