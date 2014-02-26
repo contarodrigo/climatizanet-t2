@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ClimatizanetT2</title>
+  <title>ClimatizaNet</title>
+  <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<div id="header-wrap">
+			<h1><%= link_to "ClimatizaNet", root_path %></h1>
+			<NAV>
+				<ul>
+					<li><%= link_to "Agenda", agenda_path %></li>
+					<li><%= link_to "Cliente", cliente_path %></li>
+					<li><%= link_to "Equipamento", equipamento_path %></li>
+					<li><%= link_to "Logout", agenda_path %></li>
+				</ul>
+			</NAV>	
+		</div>
+	</header>	
 
-<%= yield %>
+	<div id="content">
+		<% if notice.present? %>
+			<p id="notice"><%= notice %></p>
+		<% end%>
+
+		<% if alert.present? %>
+			<p id="alert"><%= alert %></p>
+		<% end%>
+
+			<!--O que difere layouts de templates de ações é a execução do comando yield.
+				O yield diz ao Rails que, naquele exato ponto, deverá ser injetado um outro template. 
+				É possível também ter mais de um layout em um sistema. Isso é útil, por exemplo,
+			quando há diversas “personas” em um site, como um administrador e um usuário
+			comum, ou um lojista e o cliente.-->
+		<%= yield%>
+	</div>
 
 </body>
 </html>
