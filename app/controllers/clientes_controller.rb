@@ -1,64 +1,50 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
 
-  # GET /clientes
-  # GET /clientes.json
   def index
     @clientes = Cliente.all
   end
 
-  # GET /clientes/1
-  # GET /clientes/1.json
   def show
   end
 
-  # GET /clientes/new
   def new
     @cliente = Cliente.new
   end
 
-  # GET /clientes/1/edit
   def edit
   end
 
-  # POST /clientes
-  # POST /clientes.json
   def create
+    #poderia ser assim...  @cliente = Cliente.new(params[:user])  usando mass-assignment, pag.64
     @cliente = Cliente.new(cliente_params)
 
-    respond_to do |format|
-      if @cliente.save
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @cliente }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @cliente.errors, status: :unprocessable_entity }
-      end
+    if @cliente.save
+      #O métodoredirect_toenvia ao browser do usuário um código de resposta
+      #“302” que signi!ca “Moved Temporarily”, dizendo ao navegador que ele deve ir para
+      #outro endereço. tambem estamos escrevendo uma mensagem via "flash", 
+      # Quando você escreve no flash, o conteúdo só estará disponível na próxima requisição. Por isso, é
+      #normalmente utilizado em conjunto com redireções.
+      redirect_to @cliente, notice: 'Cliente was successfully created.'
+    else
+      #redirecionar, perdemos todos os parâmetros que o usuário enviou e também as mensagens
+      #de erro de validação quando executamos o método #save. Para essas
+      #situações, devemos usar o#render, que não causa o redirecionamento.
+      render action: 'new'
     end
   end
 
-  # PATCH/PUT /clientes/1
-  # PATCH/PUT /clientes/1.json
   def update
-    respond_to do |format|
-      if @cliente.update(cliente_params)
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @cliente.errors, status: :unprocessable_entity }
-      end
+    if @cliente.update(cliente_params)
+      redirect_to @cliente, notice: 'Cliente was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
-  # DELETE /clientes/1
-  # DELETE /clientes/1.json
   def destroy
     @cliente.destroy
-    respond_to do |format|
-      format.html { redirect_to clientes_url }
-      format.json { head :no_content }
-    end
+      redirect_to clientes_url
   end
 
   private
@@ -68,6 +54,7 @@ class ClientesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    #proteção para mass-assignment
     def cliente_params
       params.require(:cliente).permit(:nome, :email, :cep, :endereco, :bairro, :municipio, :estado, :telefone, :celular, :cpf, :rg, :info)
     end

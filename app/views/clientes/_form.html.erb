@@ -1,3 +1,7 @@
+<!--O componente de templates do Rails (ActionView) possui um recurso chamadopartials, que são mini-templates 
+que podem ser embutidos em outros templates, ou seja, umapartialnão é usada para renderizar diretamente uma ação,
+ mas é usada para compor um pequeno pedaço de uma página. -->
+
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
