@@ -1,5 +1,20 @@
 <h1>Equipamentos</h1>
 
+
+<% @equipamentos.each do |equipamento| %>
+  <article class="equipamento">
+    <p>
+      <h2><%= link_to equipamento.descricao, equipamento%></h2>
+        <span class="created">
+          <%= equipamento.marca %>
+        </span>
+    </p>
+  </article>
+<% end %>
+
+
+
+
 <table>
   <thead>
     <tr>
