@@ -24,21 +24,18 @@ class UsuariosController < ApplicationController
       else
         render action: 'new'
       end
-    end
   end
 
   def update
       if @usuario.update(usuario_params)
         redirect_to @usuario, notice: 'Usuario foi atualizado com sucesso'
-
       else
         render action: 'edit'
       end
-    end
   end
 
   def destroy
-    @usuario.destroy
+    if @usuario.destroy
       redirect_to usuarios_url
     end
   end

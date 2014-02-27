@@ -1,13 +1,7 @@
 <%= form_for(@equipamento) do |f| %>
   <% if @equipamento.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@equipamento.errors.count, "error") %> prohibited this equipamento from being saved:</h2>
-
-      <ul>
-      <% @equipamento.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <h2>Erro ao salvar registro! Favor verificar.</h2>
     </div>
   <% end %>
 

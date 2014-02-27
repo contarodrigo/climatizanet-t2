@@ -5,13 +5,7 @@ que podem ser embutidos em outros templates, ou seja, umapartialnão é usada pa
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
-
-      <ul>
-      <% @cliente.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <h2> Erro ao salvar registro! Favor verificar. </h2>
     </div>
   <% end %>
 
