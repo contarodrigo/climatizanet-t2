@@ -9,45 +9,12 @@
           <%= equipamento.marca %>
         </span>
     </p>
+        <p><%= link_to 'Mostrar', equipamento %></p>
+        <p><%= link_to 'Editar', edit_equipamento_path(equipamento) %></p>
+        <p><%= link_to 'Excluir', equipamento, method: :delete, data: { confirm: 'Você realmente deseja excluir?' } %></p>
   </article>
 <% end %>
 
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Descrição</th>
-      <th>Marca</th>
-      <th>Fornecedor</th>
-      <th>Potência</th>
-      <th>Tipo</th>
-      <th>Modelo</th>
-      <th>Info</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @equipamentos.each do |equipamento| %>
-      <tr>
-        <td><%= equipamento.descricao %></td>
-        <td><%= equipamento.marca %></td>
-        <td><%= equipamento.fornecedor %></td>
-        <td><%= equipamento.potencia %></td>
-        <td><%= equipamento.tipo %></td>
-        <td><%= equipamento.modelo %></td>
-        <td><%= equipamento.info %></td>
-        <td><%= link_to 'Mostrar', equipamento %></td>
-        <td><%= link_to 'Editar', edit_equipamento_path(equipamento) %></td>
-        <td><%= link_to 'Excluir', equipamento, method: :delete, data: { confirm: 'Você realmente deseja excluir?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
