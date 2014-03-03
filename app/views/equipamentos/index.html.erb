@@ -1,17 +1,32 @@
-<h1>Equipamentos</h1>
+<h1 class="title"> Equipamentos </h1>
 
 
 <% @equipamentos.each do |equipamento| %>
   <article class="equipamento">
     <p>
-      <h2><%= link_to equipamento.descricao, equipamento%></h2>
-        <span class="created">
+      <h2><%= link_to equipamento.descricao, equipamento , id: "titleArt",  class: "titleArt" %></h2>
+        <p class="created">
           <%= equipamento.marca %>
-        </span>
+        </p>
+        <p class="created">
+          <%= equipamento.fornecedor %>
+        </p>
+        <p class="created">
+          <%= equipamento.potencia %>
+        </p>
+        <p class="created">
+          <%= equipamento.tipo %>
+        </p>
+        <p class="created">
+          <%= equipamento.modelo %>
+        </p>
+        <p class="created">
+          <%= equipamento.info %>
+        </p>
     </p>
-        <p><%= link_to 'Mostrar', equipamento %></p>
-        <p><%= link_to 'Editar', edit_equipamento_path(equipamento) %></p>
-        <p><%= link_to 'Excluir', equipamento, method: :delete, data: { confirm: 'Você realmente deseja excluir?' } %></p>
+        <t><%= link_to 'Mostrar', equipamento , id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Editar', edit_equipamento_path(equipamento) , id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Excluir', equipamento, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
   </article>
 <% end %>
 
