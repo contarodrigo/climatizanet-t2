@@ -13,7 +13,7 @@ $success-text-color: #468847;
 	font-size: 14px;
 }
 
-body{background-color: #FFF;} /*f5f5f5*/
+body { background-color: #f5f5f5; }
  
 
 @mixin shadow($color,$x,$y,$radius) {
@@ -23,9 +23,9 @@ body{background-color: #FFF;} /*f5f5f5*/
 }
 
 header {
-	@include shadow(#000000, 0, 1px, 1px);
+	@includes shadow(#ccc, 0, 3px, 6px);
 	border-bottom: 1px solid #686;
-	margin-bottom: 1px;
+	margin-bottom: 15px;
 
 	#header-wrap {
 		width: $content-width;
@@ -33,7 +33,7 @@ header {
 	}
 
 	height: $header-height;
-	background-color: #1E90FF; /* Cor da barra de navegação*/
+	background-color: #00B2EE; /* Cor da barra de navegação*/
 	h1 {
 		float: left;
 		a {
@@ -61,7 +61,7 @@ header nav {
 	li {
 		display: inline-block;
 		line-height: 24px;
-		background-color: #000066; /* Cor  dos botoões da barra de navegação*/
+		background-color: #009ACD ; /* Cor  dos botoões da barra de navegação #000066*/
 		padding: 3px 10px;
 
 
@@ -76,7 +76,7 @@ header nav {
 			display: block;
 			font-size: 12px;
 			font-weight: 600;
-			color: #1E90FF; /* Cor de das letras dos botões*/
+			color: #000; /* Cor de das letras dos botões   #1E90FF;*/
 			&:hover {
 				color: #FFFFFF; /*  Cor ao passar o mouse pelo ClimatizaNet barra de navegação*/
 			}
