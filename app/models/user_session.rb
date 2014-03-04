@@ -26,4 +26,17 @@ class UserSession
 		@session[:usuario_id] = usuario.id
 	end
 
+	def usuario_corrente
+		Usuario.find(@session[:usuario_id])
+	end
+
+	def usuario_logado?
+		@session[:usuario_id].present?
+	end
+
+	def destroy
+		@session[:usuario_id] = nil
+	end
+
+
 end

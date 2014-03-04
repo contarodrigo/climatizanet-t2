@@ -2,23 +2,21 @@
 <html>
 <head>
   <title>ClimatizaNet</title>
-  <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
+
 <body>
 	<header>
 		<div id="header-wrap">
-			<h1><%= link_to "ClimatizaNet", root_path %></h1>
-			<NAV>
-				<ul>
-					<li><%= link_to "Agenda", agendas_path %></li>
-					<li><%= link_to "Cliente", clientes_path %></li>
-					<li><%= link_to "Equipamento", equipamentos_path %></li>
-					<li><%= link_to "Logout", agendas_path %></li>
-				</ul>
-			</NAV>	
+			<h1><%= link_to "Climatiza.Net", root_path %></h1>
+			<% if usuario_logado? %>
+				<%= render'layouts/user_navbar'%>
+			<% else%>
+				<%= render'layouts/visitor_navbar'%>
+			<% end%>
 		</div>
 	</header>	
 

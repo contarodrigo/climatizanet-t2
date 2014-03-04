@@ -1,3 +1,4 @@
+#encoding:utf-8
 class UserSessionsController < ApplicationController
 
   def new
@@ -14,7 +15,8 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    
+    user_session.destroy
+    redirect_to root_path, notice: 'Logout efetuado com sucesso. Até logo!'
   end
   
 end
