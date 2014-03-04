@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>ClimatizaNet</title>
-	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css"  href="http://fonts.googleapis.com/css?family=Ubuntu">
 	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<div id="header-wrap">
-			<h1><%= link_to "Climatiza.Net", root_path %></h1>
+			<h1><%= link_to "ClimatizaNet", root_path %></h1>
 			<% if usuario_logado? %>
 				<%= render'layouts/user_navbar'%>
 			<% else%>
