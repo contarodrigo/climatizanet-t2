@@ -1,37 +1,32 @@
-<h1>Listing items</h1>
+<h1>Itens</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Qtdequipamento</th>
-      <th>Qtdtubulacao</th>
-      <th>Qtdextra</th>
-      <th>Tubulacao</th>
-      <th>Extra</th>
-      <th>Valor</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @items.each do |item| %>
+  <article class="item">
+    <p class="created">
+      <%= item.qtdequipamento %>
+    </p>
+    <p class="created">
+      <%= item.qtdtubulacao %>
+    </p>
+    <p class="created">
+      <%= item.qtdextra %>
+    </p>
+    <p class="created">
+      <%= item.tubulacao %>
+    </p>
+    <p class="created">
+      <%= item.extra %>
+    </p>
+    <p class="created">
+      <%= item.valor %>
+    </p>
+        <t><%= link_to 'Mostrar', item , id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Editar', edit_item_path(item) , id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Excluir', item, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+  </article>
+<% end %>
 
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.qtdequipamento %></td>
-        <td><%= item.qtdtubulacao %></td>
-        <td><%= item.qtdextra %></td>
-        <td><%= item.tubulacao %></td>
-        <td><%= item.extra %></td>
-        <td><%= item.valor %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'Novo', new_item_path ,  id: "newButton",  class: "newButton"%>

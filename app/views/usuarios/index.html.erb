@@ -1,31 +1,18 @@
-<h1>Usuarios cadastrados</h1>
+<h1>Usuários cadastrados</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>password</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @usuarios.each do |usuario| %>
-      <tr>
-        <td><%= usuario.nome %></td>
-        <td><%= usuario.email %></td>
-        <td><%= usuario.password %></td>
-        <td><%= link_to 'Mostrar', usuario %></td>
-        <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% @usuarios.each do |usuario| %>
+  <article class="usuario">
+    <p>
+      <h2><%= link_to usuario.nome, usuario , id: "titleArt",  class: "titleArt" %></h2>
+        <p class="created">
+          <%= usuario.email %>
+        </p>
+    </p>
+        <t><%= link_to 'Mostrar', usuario , id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Editar', edit_usuario_path(usuario) , id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+  </article>
+<% end %>
 <br>
 
-<%= link_to 'Novo Usuario', new_usuario_path %>
+<%= link_to 'Novo', new_usuario_path ,  id: "newButton",  class: "newButton"%>

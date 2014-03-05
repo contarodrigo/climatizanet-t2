@@ -2,22 +2,21 @@
   <% if @usuario.errors.any? %>
     <div id="error_explanation">
       <h2> Erro ao salvar registro! Favor verificar. </h2>
-      </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :nome %><br>
+    <%= f.label "Nome" %><br>
     <%= f.text_field :nome %>
     <%= error_tag @usuario, :nome %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label "E-mail" %><br>
     <%= f.text_field :email %>
     <%= error_tag @usuario, :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br>
+    <%= f.label "Senha" %><br>
     <%= f.text_field :password %>
     <%= error_tag @usuario, :password %>
   </div>

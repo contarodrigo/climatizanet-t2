@@ -1,49 +1,35 @@
-<h1>Lista dos Clientes</h1>
+<h1>Clientes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Cep</th>
-      <th>Endereco</th>
-      <th>Bairro</th>
-      <th>Municipio</th>
-      <th>Estado</th>
-      <th>Telefone</th>
-      <th>Celular</th>
-      <th>Cpf</th>
-      <th>Rg</th>
-      <th>Info</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @clientes.each do |cliente| %>
+  <article class="cliente">
+    <p>
+      <h2><%= link_to cliente.nome, cliente , id: "titleArt",  class: "titleArt" %></h2>
+        <p class="created">
+          <%= cliente.email %>
+        </p>
+        <p class="created">
+          <%= cliente.telefone %>
+        </p>
+        <p class="created">
+          <%= cliente.celular %>
+        </p>
+        <p class="created">
+          <%= cliente.cpf %>
+        </p>
+        <p class="created">
+          <%= cliente.rg %>
+        </p>
+        <p class="created">
+          <%= cliente.info %>
+        </p>
+    </p>
+        <t><%= link_to 'Mostrar', cliente , id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Editar', edit_cliente_path(cliente) , id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+  </article>
+<% end %>
 
-  <tbody>
-    <% @clientes.each do |cliente| %>
-      <tr>
-        <td><%= cliente.nome %></td>
-        <td><%= cliente.email %></td>
-        <td><%= cliente.cep %></td>
-        <td><%= cliente.endereco %></td>
-        <td><%= cliente.bairro %></td>
-        <td><%= cliente.municipio %></td>
-        <td><%= cliente.estado %></td>
-        <td><%= cliente.telefone %></td>
-        <td><%= cliente.celular %></td>
-        <td><%= cliente.cpf %></td>
-        <td><%= cliente.rg %></td>
-        <td><%= cliente.info %></td>
-        <td><%= link_to 'Mostrar', cliente %></td>
-        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Exluir', cliente, method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'Novo Cliente', new_cliente_path %>
+<%= link_to 'Novo', new_cliente_path ,  id: "newButton",  class: "newButton"%>

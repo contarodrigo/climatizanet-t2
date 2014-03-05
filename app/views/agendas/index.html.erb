@@ -1,29 +1,21 @@
-<h1>Listing agendas</h1>
+<h1>Agendas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Data</th>
-      <th>Hora</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @agendas.each do |agenda| %>
 
-  <tbody>
-    <% @agendas.each do |agenda| %>
-      <tr>
-        <td><%= agenda.data %></td>
-        <td><%= agenda.hora %></td>
-        <td><%= link_to 'Show', agenda %></td>
-        <td><%= link_to 'Edit', edit_agenda_path(agenda) %></td>
-        <td><%= link_to 'Destroy', agenda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <article class="equipamento">
+    <p class="created">
+      <%= agenda.data %>
+    </p>
+    <p class="created">
+      <%= agenda.hora %>
+    </p>
+
+    <t><%= link_to 'Mostrar', agenda , id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Editar', edit_agenda_path(agenda) , id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Excluir', agenda, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+  </article>
+<% end %>
 
 <br>
 
-<%= link_to 'New Agenda', new_agenda_path %>
+<%= link_to 'Nova Agenda', new_agenda_path, id: "newButton",  class: "newButton"%>

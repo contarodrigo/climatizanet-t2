@@ -6,12 +6,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :data %><br>
+    <%= f.label "Data" %><br>
     <%= f.date_select :data %>
     <%= error_tag @agenda, :data %>
   </div>
   <div class="field">
-    <%= f.label :hora %><br>
+    <%= f.label "Hora" %><br>
     <%= f.time_select :hora %>
     <%= error_tag @agenda, :hora %>
   </div>
