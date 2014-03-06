@@ -28,7 +28,7 @@ class AgendasController < ApplicationController
 
     respond_to do |format|
       if @agenda.save
-        format.html { redirect_to @agenda, notice: 'Agenda was successfully created.' }
+        format.html { redirect_to @agenda, notice: 'Agenda criada com sucesso!' }
         format.json { render action: 'show', status: :created, location: @agenda }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class AgendasController < ApplicationController
   def update
     respond_to do |format|
       if @agenda.update(agenda_params)
-        format.html { redirect_to @agenda, notice: 'Agenda was successfully updated.' }
+        format.html { redirect_to @agenda, notice: 'Agenda alterada com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

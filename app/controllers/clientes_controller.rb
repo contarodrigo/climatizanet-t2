@@ -25,7 +25,7 @@ class ClientesController < ApplicationController
       #outro endereço. tambem estamos escrevendo uma mensagem via "flash", 
       # Quando você escreve no flash, o conteúdo só estará disponível na próxima requisição. Por isso, é
       #normalmente utilizado em conjunto com redireções.
-      redirect_to @cliente, notice: 'Cliente was successfully created.'
+      redirect_to @cliente, notice: 'Cliente criado com sucesso!'
     else
       #redirecionar, perdemos todos os parâmetros que o usuário enviou e também as mensagens
       #de erro de validação quando executamos o método #save. Para essas
@@ -36,7 +36,7 @@ class ClientesController < ApplicationController
 
   def update
     if @cliente.update(cliente_params)
-      redirect_to @cliente, notice: 'Cliente was successfully updated.'
+      redirect_to @cliente, notice: 'Cliente alterado com sucesso!'
     else
       render action: 'edit'
     end

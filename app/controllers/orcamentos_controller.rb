@@ -28,7 +28,7 @@ class OrcamentosController < ApplicationController
 
     respond_to do |format|
       if @orcamento.save
-        format.html { redirect_to @orcamento, notice: 'Orcamento was successfully created.' }
+        format.html { redirect_to @orcamento, notice: 'Orcamento criado com sucesso!' }
         format.json { render action: 'show', status: :created, location: @orcamento }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class OrcamentosController < ApplicationController
   def update
     respond_to do |format|
       if @orcamento.update(orcamento_params)
-        format.html { redirect_to @orcamento, notice: 'Orcamento was successfully updated.' }
+        format.html { redirect_to @orcamento, notice: 'Orcamento alterado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

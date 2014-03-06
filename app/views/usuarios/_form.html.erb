@@ -17,8 +17,13 @@
   </div>
   <div class="field">
     <%= f.label "Senha" %><br>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
     <%= error_tag @usuario, :password %>
+  </div>
+  <div class="field">
+    <%= f.label "Confirme a senha" %><br>
+    <%= f.password_field :password_confirmation %>
+    <%= error_tag @usuario, :password_confirmation %>
   </div>
   <div class="actions">
     <%= f.submit %>
