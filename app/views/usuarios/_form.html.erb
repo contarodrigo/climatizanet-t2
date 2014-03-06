@@ -6,22 +6,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Nome" %><br>
+    <%= f.label "Nome" %>
     <%= f.text_field :nome %>
     <%= error_tag @usuario, :nome %>
   </div>
   <div class="field">
-    <%= f.label "E-mail" %><br>
+    <%= f.label "E-mail" %>
     <%= f.text_field :email %>
     <%= error_tag @usuario, :email %>
   </div>
   <div class="field">
-    <%= f.label "Senha" %><br>
+    <%= f.label "Senha" %>
     <%= f.password_field :password %>
     <%= error_tag @usuario, :password %>
   </div>
   <div class="field">
-    <%= f.label "Confirme a senha" %><br>
+    <%= f.label "Confirme a senha" %>
     <%= f.password_field :password_confirmation %>
     <%= error_tag @usuario, :password_confirmation %>
   </div>
