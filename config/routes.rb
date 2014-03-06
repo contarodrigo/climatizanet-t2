@@ -14,7 +14,7 @@ ClimatizanetT2::Application.routes.draw do
   #linha abaixo acho que nçoa precisa pois nçao temos validaçao por email
   #resources :confirmation, only: [:show]
 
-  resources :user_sessions, only: [:create, :new, :destroy]
+  resource :user_sessions, only: [:create, :new, :destroy]
 
   #A ação raiz, ouroot,éaação que é executada quando vamos ao endereço raiz do site,
   #por exemplo,http://www.colcho.net,ouhttp://localhost:3000/, assim sera redirecionado para home_controller
