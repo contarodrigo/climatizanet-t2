@@ -19,47 +19,53 @@ que podem ser embutidos em outros templates, ou seja, umapartialnão é usada pa
     <%= f.text_field :email %>
     <%= error_tag @cliente, :email %>
   </div>
-  <div class="field">
+
+  <div class="campo-left">
     <%= f.label "CEP" %>
     <%= f.text_field :cep %>
     <%= error_tag @cliente, :cep %>
   </div>
-  <div class="field">
+  <div class="campo-rigth">
     <%= f.label "Endereço" %>
     <%= f.text_field :endereco %>
     <%= error_tag @cliente, :endereco %>
   </div>
-  <div class="field">
+
+
+  <div class="campo-left">
     <%= f.label "Bairro" %>
     <%= f.text_field :bairro %>
     <%= error_tag @cliente, :bairro %>
   </div>
-  <div class="field">
+  <div class="campo-rigth">
     <%= f.label "Município" %>
     <%= f.text_field :municipio %>
     <%= error_tag @cliente, :municipio %>
   </div>
+
   <div class="field">
     <%= f.label "Estado" %>
     <%= f.text_field :estado %>
     <%= error_tag @cliente, :estado %>
   </div>
-  <div class="field">
+
+  <div class="campo-left">
     <%= f.label "Telefone" %>
     <%= f.text_field :telefone %>
     <%= error_tag @cliente, :telefone %>
   </div>
-  <div class="field">
+  <div class="campo-rigth">
     <%= f.label "Celular" %>
     <%= f.text_field :celular %>
     <%= error_tag @cliente, :celular %>
   </div>
-  <div class="field">
+  
+  <div class="campo-left">
     <%= f.label "CPF" %>
     <%= f.text_field :cpf %>
     <%= error_tag @cliente, :cpf %>
   </div>
-  <div class="field">
+  <div class="campo-rigth">
     <%= f.label "RG" %>
     <%= f.text_field :rg %>
     <%= error_tag @cliente, :rg %>
