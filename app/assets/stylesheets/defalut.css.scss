@@ -1,4 +1,4 @@
-$header-height: 55px;
+$header-height: 50px;
 $content-width: 700px;
 
 $sans-serif-families: "Helvetica",sans-serif;
@@ -40,6 +40,7 @@ header {
 			font-family: 'Ubuntu', serif;
 			font-weight: 400;
 			font-size: 2.5em;
+			line-height:55px;
 			&:hover {
 				color: #FFFFFF; /*  Cor ao passar o mouse pelo ClimatizaNet barra de navegação*/
 			}
@@ -128,13 +129,15 @@ form {
 	}
 
 	textarea {
-		width: 200;
-		height: 100px;
+		width: 440px;
+		height: 70px;
 	}
 
 	input {
 	padding: 5px 0px 5px 0px;
-	margin: 2px;
+	margin-bottom: 5px;
+	
+	/* margin: 2px;  estava criado um deslocamento ente o label e o input */
 	}
 }
 
@@ -280,4 +283,13 @@ article {
 .newButton:active {
 	position:relative;
 	top:1px;
+}
+
+.campo-left {
+	float: left;
+		margin-right: 30px;
+}
+
+.campo-right {
+	float: right;
 }
