@@ -36,8 +36,8 @@ header {
 	h1 {
 		float: left;
 		a {
-			color: #000066;  /* Cor ClimatizaNet letra Barra de navegação*/
-			font-family: 'Ubuntu', serif;
+			color: #000066;  /* Cor ClimatizaNet letra Barra de navegação */
+			font-family: 'Audiowide', serif; 
 			font-weight: 400;
 			font-size: 2.5em;
 			line-height:55px;
@@ -107,7 +107,7 @@ header nav {
 }
 
 form {
-	padding: 5px;
+	/* padding: 5px; estava deslocando todos os campos ao editar ou mostrar */
 
 	label {
 		display: block;
@@ -210,8 +210,8 @@ form {
 
 article {
 	background-color: white;
-	padding: 20px 25px;
-	margin-top: 10px;
+	padding: 10px 25px 25px 20px;
+	margin-top: 5px;
 	@include shadow(#ccc, 0, 3px, 6px);
 }
 
