@@ -1,5 +1,6 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+  before_action :can_change, only: [:show, :edit, :update, :destroy]
 
   def index
     @usuarios = Usuario.all
@@ -37,6 +38,12 @@ class UsuariosController < ApplicationController
   def destroy
     if @usuario.destroy
       redirect_to usuarios_url
+    end
+  end
+
+  def can_change
+    unless usuario_logado? && usuario_corrente == usuario
+      redirect_to root_path
     end
   end
 

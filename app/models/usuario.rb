@@ -2,6 +2,9 @@ class Usuario < ActiveRecord::Base
 	EMAIL_REGEXP=/\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
 	scope :registro_valido, -> {where.not(email: nil) }
 
+	has_many :clientes
+	has_many :equipamentos
+
 
 	validates_presence_of :nome, :email
 	#validates_confirmation_of :senha,

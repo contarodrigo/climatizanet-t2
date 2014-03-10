@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226015108) do
+ActiveRecord::Schema.define(version: 20140310224528) do
 
   create_table "agendas", force: true do |t|
     t.date     "data"
     t.time     "hora"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cliente_id"
   end
+
+  add_index "agendas", ["cliente_id"], name: "index_agendas_on_cliente_id"
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
@@ -35,7 +38,10 @@ ActiveRecord::Schema.define(version: 20140226015108) do
     t.text     "info"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "usuario_id"
   end
+
+  add_index "clientes", ["usuario_id"], name: "index_clientes_on_usuario_id"
 
   create_table "equipamentos", force: true do |t|
     t.string   "descricao"
@@ -47,7 +53,10 @@ ActiveRecord::Schema.define(version: 20140226015108) do
     t.text     "info"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "usuario_id"
   end
+
+  add_index "equipamentos", ["usuario_id"], name: "index_equipamentos_on_usuario_id"
 
   create_table "items", force: true do |t|
     t.float    "qtdequipamento"
@@ -58,12 +67,18 @@ ActiveRecord::Schema.define(version: 20140226015108) do
     t.decimal  "valor"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orcamento_id"
   end
+
+  add_index "items", ["orcamento_id"], name: "index_items_on_orcamento_id"
 
   create_table "orcamentos", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cliente_id"
   end
+
+  add_index "orcamentos", ["cliente_id"], name: "index_orcamentos_on_cliente_id"
 
   create_table "usuarios", force: true do |t|
     t.string   "nome"

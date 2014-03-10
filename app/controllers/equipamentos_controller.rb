@@ -14,7 +14,7 @@ class EquipamentosController < ApplicationController
 
   # GET /equipamentos/new
   def new
-    @equipamento = Equipamento.new
+    @equipamento = usuario_corrente.equipamentos.build
   end
 
   # GET /equipamentos/1/edit

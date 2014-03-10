@@ -1,5 +1,6 @@
 #encoding:utf-8
 class UserSessionsController < ApplicationController
+  before_action :require_authentication,  only: :destroy
 
   def new
     @user_session = UserSession.new(session)
