@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  before_action :require_authentication, only: [:show, :edit, :update, :destroy]
+  before_action :require_authentication, only: [:index, :new, :edit, :show, :create, :update, :destroy]
   before_action :can_change, only: [:show, :edit, :update, :destroy]
 
   def index

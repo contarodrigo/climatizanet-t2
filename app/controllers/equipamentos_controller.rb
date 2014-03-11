@@ -1,6 +1,6 @@
 class EquipamentosController < ApplicationController
   before_action :set_equipamento, only: [:show, :edit, :update, :destroy]
-  before_action :require_authentication, only: [:show, :edit, :update, :destroy]
+  before_action :require_authentication, only: [:index, :new, :edit, :show, :create, :update, :destroy]
 
   # GET /equipamentos
   # GET /equipamentos.json
