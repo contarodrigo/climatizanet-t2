@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   #disponibiliza metodos para as view
   helper_method :usuario_corrente, :usuario_logado?
 
-  def user_session
+  	def user_session
 		UserSession.new(session)
 	end
 

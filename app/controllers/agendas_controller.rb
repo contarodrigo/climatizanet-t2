@@ -1,5 +1,6 @@
 class AgendasController < ApplicationController
   before_action :set_agenda, only: [:show, :edit, :update, :destroy]
+  before_action :require_authentication, only: [:show, :edit, :update, :destroy]  
 
   # GET /agendas
   # GET /agendas.json

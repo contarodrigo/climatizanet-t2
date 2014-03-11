@@ -1,5 +1,6 @@
 class OrcamentosController < ApplicationController
   before_action :set_orcamento, only: [:show, :edit, :update, :destroy]
+  before_action :require_authentication, only: [:show, :edit, :update, :destroy]  
 
   # GET /orcamentos
   # GET /orcamentos.json

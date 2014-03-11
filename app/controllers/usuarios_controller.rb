@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+  before_action :require_authentication, only: [:show, :edit, :update, :destroy]
   before_action :can_change, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -41,20 +41,22 @@ class UsuariosController < ApplicationController
     end
   end
 
-  def can_change
-    unless usuario_logado? && usuario_corrente == usuario
-      redirect_to root_path
-    end
-  end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_usuario
-      @usuario = Usuario.find(params[:id])
+    def usuario
+      @usuario ||= Usuario.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
       params.require(:usuario).permit(:nome, :email, :password, :password_confirmation)
     end
+
+    def can_change
+      unless usuario_logado? && usuario_corrente == usuario
+        redirect_to root_path
+      end
+    end
+
+
 end
