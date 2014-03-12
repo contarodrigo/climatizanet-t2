@@ -1,24 +1,25 @@
 class ClientesController < ApplicationController
-  before_action :set_cliente, only: [:show, :edit, :update, :destroy]
   before_action :require_authentication, only: [:index, :new, :edit, :show, :create, :update, :destroy]
 
   def index
-    @clientes = Cliente.all
+    @clientes = usuario_corrente.clientes.all
   end
 
   def show
+    @cliente = usuario_corrente.clientes.find(params[:id]) 
   end
 
   def new
-    @cliente = Cliente.new
+    @cliente = usuario_corrente.clientes.build
   end
 
   def edit
+    @cliente = usuario_corrente.clientes.find(params[:id])    
   end
 
   def create
     #poderia ser assim...  @cliente = Cliente.new(params[:user])  usando mass-assignment, pag.64
-    @cliente = Cliente.new(cliente_params)
+    @cliente = usuario_corrente.clientes.build(cliente_params)
 
     if @cliente.save
       #O métodoredirect_toenvia ao browser do usuário um código de resposta
@@ -36,6 +37,8 @@ class ClientesController < ApplicationController
   end
 
   def update
+    @cliente = usuario_corrente.clientes.find(params[:id])
+
     if @cliente.update(cliente_params)
       redirect_to @cliente, notice: 'Cliente alterado com sucesso!'
     else
@@ -44,15 +47,11 @@ class ClientesController < ApplicationController
   end
 
   def destroy
-    @cliente.destroy
+    @cliente = usuario_corrente.clientes.find(params[:id])
       redirect_to clientes_url
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cliente
-      @cliente = Cliente.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     #proteção para mass-assignment
