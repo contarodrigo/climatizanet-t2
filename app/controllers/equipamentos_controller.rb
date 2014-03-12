@@ -5,12 +5,13 @@ class EquipamentosController < ApplicationController
   # GET /equipamentos
   # GET /equipamentos.json
   def index
-    @equipamentos = Equipamento.all
+    @equipamentos = usuario_corrente.equipamentos.all
   end
 
   # GET /equipamentos/1
   # GET /equipamentos/1.json
   def show
+    @equipamento = usuario_corrente.equipamentos.find(params[:id]) 
   end
 
   # GET /equipamentos/new
@@ -20,12 +21,13 @@ class EquipamentosController < ApplicationController
 
   # GET /equipamentos/1/edit
   def edit
+    @equipamento = usuario_corrente.equipamentos.find(params[:id]) 
   end
 
   # POST /equipamentos
   # POST /equipamentos.json
   def create
-    @equipamento = Equipamento.new(equipamento_params)
+    @equipamento = usuario_corrente.equipamentos.build(equipamento_params)
 
     respond_to do |format|
       if @equipamento.save
@@ -41,6 +43,8 @@ class EquipamentosController < ApplicationController
   # PATCH/PUT /equipamentos/1
   # PATCH/PUT /equipamentos/1.json
   def update
+    @equipamento = usuario_corrente.equipamentos.find(params[:id])
+
     respond_to do |format|
       if @equipamento.update(equipamento_params)
         format.html { redirect_to @equipamento, notice: 'Equipamento was successfully updated.' }
@@ -55,6 +59,7 @@ class EquipamentosController < ApplicationController
   # DELETE /equipamentos/1
   # DELETE /equipamentos/1.json
   def destroy
+    @equipamento = usuario_corrente.equipamentos.find(params[:id])
     @equipamento.destroy
     respond_to do |format|
       format.html { redirect_to equipamentos_url }

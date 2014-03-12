@@ -48,6 +48,8 @@ class ClientesController < ApplicationController
 
   def destroy
     @cliente = usuario_corrente.clientes.find(params[:id])
+    @cliente.destroy
+
       redirect_to clientes_url
   end
 
