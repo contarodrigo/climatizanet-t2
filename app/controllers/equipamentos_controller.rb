@@ -70,7 +70,7 @@ class EquipamentosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_equipamento
-      @equipamento = Equipamento.find(params[:id])
+      @equipamento = usuario_corrente.equipamentos.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
