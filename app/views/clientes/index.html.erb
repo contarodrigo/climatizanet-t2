@@ -1,29 +1,20 @@
-<%= render 'search' %>
-
-<h1> 
-  <% if @search_query.present? %>
-    Resultados da busca
-  <% else  %>
-    Clientes
-  <% end %>
-</h1>
-
+<h1>Clientes</h1>
 
 <% @clientes.each do |cliente| %>
   <article class="cliente">
     <p>
-      <h2><%= link_to highlight(cliente.nome || '', @search_query), cliente , id: "titleArt",  class: "titleArt" %></h2>
+      <h2><%= link_to cliente.nome, cliente , id: "titleArt",  class: "titleArt" %></h2>
         <p class="created">
-          <%= highlight(cliente.email || '', @search_query) %>
+          <%= cliente.email %>
         </p>
         <p class="created">
-          <%= highlight(cliente.telefone || '', @search_query)%>
+          <%= cliente.telefone %>
         </p>
         <p class="created">
-          <%= highlight(cliente.celular || '', @search_query) %>
+          <%= cliente.celular %>
         </p>
         <p class="created">
-          <%= highlight(cliente.cpf || '', @search_query) %>
+          <%= cliente.cpf %>
         </p>
     </p>
         <t><%= link_to 'Mostrar', cliente , id: "button1",  class: "button1" %></t>

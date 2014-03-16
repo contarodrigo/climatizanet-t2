@@ -2,11 +2,7 @@ class ClientesController < ApplicationController
   before_action :require_authentication, only: [:index, :new, :edit, :show, :create, :update, :destroy]
 
   def index
-    @search_query = params[:q]
-
-    clientes = Cliente.search(@search_query)
-
-    @clientes = usuario_corrente.clientes
+    @clientes = usuario_corrente.clientes.all
   end
 
   def show
@@ -26,7 +22,7 @@ class ClientesController < ApplicationController
     @cliente = usuario_corrente.clientes.build(cliente_params)
 
     if @cliente.save
-      #O método redirect_toenvia ao browser do usuário um código de resposta
+      #O métodoredirect_toenvia ao browser do usuário um código de resposta
       #“302” que signi!ca “Moved Temporarily”, dizendo ao navegador que ele deve ir para
       #outro endereço. tambem estamos escrevendo uma mensagem via "flash", 
       # Quando você escreve no flash, o conteúdo só estará disponível na próxima requisição. Por isso, é
