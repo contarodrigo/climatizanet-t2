@@ -2,7 +2,11 @@ class ClientesController < ApplicationController
   before_action :require_authentication, only: [:index, :new, :edit, :show, :create, :update, :destroy]
 
   def index
-    @clientes = usuario_corrente.clientes.all
+    @search_query = params[:q]
+
+    clientes = Cliente.search(@search_query)
+
+    @clientes = usuario_corrente.clientes
   end
 
   def show
