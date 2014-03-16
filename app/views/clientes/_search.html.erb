@@ -1,0 +1,4 @@
+<%= form_tag clientes_path, method: :get, class: 'search' do %>
+  <%= text_field_tag :q, @search_query,
+    placeholder: 'Buscar por...' %>
+<% end%>
