@@ -4,9 +4,8 @@ class ClientesController < ApplicationController
   def index
     @search_query = params[:q]
 
-    clientes = Cliente.search(@search_query)
+    @clientes = usuario_corrente.clientes.search(@search_query)
 
-    @clientes = usuario_corrente.clientes
   end
 
   def show
