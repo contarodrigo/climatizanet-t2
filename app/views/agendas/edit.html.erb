@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Mostrar', @agenda %> |
-<%= link_to 'Voltar', agendas_path %>
+<%= link_to 'Mostrar', [@agenda.cliente, @agenda]
+<%= link_to 'Voltar', cliente_agendas_path(@agenda.cliente) %>

@@ -8,5 +8,5 @@
   <%= @agenda.hora %>
 </p>
 
-<%= link_to 'Editar', edit_agenda_path(@agenda) %> |
-<%= link_to 'Voltar', agendas_path %>
+<%= link_to 'Editar', edit_cliente_agenda_path(@agenda.cliente, @agenda) %> |
+<%= link_to 'Voltar', cliente_agendas_path(@agenda.cliente) %>

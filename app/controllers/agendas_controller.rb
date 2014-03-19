@@ -5,65 +5,70 @@ class AgendasController < ApplicationController
   # GET /agendas
   # GET /agendas.json
   def index
-    @agendas = Agenda.all
+    cliente = Cliente.find(params[:cliente_id])
+
+    @agendas = cliente.agendas
   end
 
   # GET /agendas/1
   # GET /agendas/1.json
   def show
+    cliente = Cliente.find(params[:cliente_id])
+
+    @agenda = cliente.agendas.find(params[:id])    
   end
 
   # GET /agendas/new
   def new
- # @cliente = Cliente.last
-  @agenda = @cliente.agendas.build
+    cliente = Cliente.find(params[:cliente_id])
 
+    @agenda = cliente.agendas.build
   end
 
   # GET /agendas/1/edit
   def edit
+    cliente = Cliente.find(params[:cliente_id])
+
+    @agenda = cliente.agendas.find(params[:id])      
   end
 
   # POST /agendas
   # POST /agendas.json
   def create
-  @cliente = Cliente.last
-  @agenda = Agenda.create(cliente_id: @cliente)
+    cliente = Cliente.find(params[:cliente_id])
 
+    @agenda = cliente.agendas.create(agenda_params)
 
-    respond_to do |format|
       if @agenda.save
-        format.html { redirect_to @agenda, notice: 'Agenda criada com sucesso!' }
-        format.json { render action: 'show', status: :created, location: @agenda }
+        redirect_to([@agenda.cliente, @agenda], notice: 'Agenda criada com sucesso!')
       else
-        format.html { render action: 'new' }
-        format.json { render json: @agenda.errors, status: :unprocessable_entity }
+        render action: 'new'
       end
-    end
   end
 
   # PATCH/PUT /agendas/1
   # PATCH/PUT /agendas/1.json
   def update
-    respond_to do |format|
+      cliente = Cliente.find(params[:cliente_id])
+
+      @agenda = cliente.agendas.find(params[:id])
+
       if @agenda.update(agenda_params)
-        format.html { redirect_to @agenda, notice: 'Agenda alterada com sucesso!' }
-        format.json { head :no_content }
+        redirect_to([@agenda.cliente, @agenda], notice: 'Agenda alterada com sucesso!')
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @agenda.errors, status: :unprocessable_entity }
+        render action: 'edit'
       end
-    end
   end
 
   # DELETE /agendas/1
   # DELETE /agendas/1.json
   def destroy
-    @agenda.destroy
-    respond_to do |format|
-      format.html { redirect_to agendas_url }
-      format.json { head :no_content }
-    end
+      cliente = Cliente.find(params[:cliente_id])
+
+      @agenda = cliente.agendas.find(params[:id])
+
+      @agenda.destroy
+      redirect_to cliente_agendas_url
   end
 
   private

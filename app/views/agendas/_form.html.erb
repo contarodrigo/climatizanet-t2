@@ -1,4 +1,4 @@
-<%= form_for(@agenda) do |f| %>
+<%= form_for([@agenda.cliente, @agenda]) do |f| %>
   <% if @agenda.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@agenda.errors.count, "error") %> Erro ao salvar registro! Favor verificar</h2>

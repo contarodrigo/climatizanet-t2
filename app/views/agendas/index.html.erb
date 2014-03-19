@@ -10,12 +10,12 @@
       <%= agenda.hora %>
     </p>
 
-    <t><%= link_to 'Mostrar', agenda , id: "button1",  class: "button1" %></t>
-    <t><%= link_to 'Editar', edit_agenda_path(agenda) , id: "button1",  class: "button1" %></t>
-    <t><%= link_to 'Excluir', agenda, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Mostrar', [agenda.cliente, agenda] , id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Editar', edit_cliente_agenda_path(agenda.cliente, agenda) , id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Excluir',  [agenda.cliente, agenda], method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
   </article>
 <% end %>
 
 <br>
 
-<%= link_to 'Nova Agenda', new_agenda_path, id: "newButton",  class: "newButton"%>
+<%= link_to 'Nova Agenda', new_cliente_agenda_path, id: "newButton",  class: "newButton"%>
