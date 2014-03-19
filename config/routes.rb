@@ -1,6 +1,5 @@
 ClimatizanetT2::Application.routes.draw do
-  resources :agendas
-
+  
   resources :equipamentos
 
   resources :items
@@ -11,6 +10,11 @@ ClimatizanetT2::Application.routes.draw do
 
   resources :usuarios
 
+  resources :clientes do
+    resources :agendas
+  end
+  
+  resources :agendas
   #linha abaixo acho que nçoa precisa pois nçao temos validaçao por email
   #resources :confirmation, only: [:show]
 

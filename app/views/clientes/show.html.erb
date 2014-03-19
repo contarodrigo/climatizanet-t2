@@ -60,5 +60,6 @@
   <%= @cliente.info %>
 </p>
 
-<%= link_to 'Editar', edit_cliente_path(@cliente) %> |
+<%= link_to 'Editar', edit_cliente_path(@cliente) %> 
 <%= link_to 'Voltar', clientes_path %>
+<%= link_to 'Nova agenda', new_cliente_agenda_path(@cliente) %>

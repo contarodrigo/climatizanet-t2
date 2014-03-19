@@ -15,7 +15,9 @@ class AgendasController < ApplicationController
 
   # GET /agendas/new
   def new
-    @agenda = Agenda.new
+ # @cliente = Cliente.last
+  @agenda = @cliente.agendas.build
+
   end
 
   # GET /agendas/1/edit
@@ -25,7 +27,9 @@ class AgendasController < ApplicationController
   # POST /agendas
   # POST /agendas.json
   def create
-    @agenda = Agenda.new(agenda_params)
+  @cliente = Cliente.last
+  @agenda = Agenda.create(cliente_id: @cliente)
+
 
     respond_to do |format|
       if @agenda.save
@@ -70,6 +74,6 @@ class AgendasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agenda_params
-      params.require(:agenda).permit(:data, :hora)
+      params.require(:agenda).permit(:data, :hora, :cliente_id)
     end
 end
