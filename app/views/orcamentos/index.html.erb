@@ -12,9 +12,9 @@
   <tbody>
     <% @orcamentos.each do |orcamento| %>
       <tr>
-        <td><%= link_to 'Mostrar', orcamento %></td>
-        <td><%= link_to 'Editar', edit_orcamento_path(orcamento) %></td>
-        <td><%= link_to 'Excluir', orcamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar',[orcamento.cliente, orcamento]  %></td>
+        <td><%= link_to 'Editar', edit_cliente_orcamento_path(orcamento.cliente, orcamento)  %></td>
+        <td><%= link_to 'Excluir', [orcamento.cliente, orcamento], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'Novo Orçamento', new_orcamento_path %>
+<%= link_to 'Nova orçamento', new_cliente_orcamento_path, id: "newButton",  class: "newButton"%>

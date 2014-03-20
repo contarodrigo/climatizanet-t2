@@ -60,7 +60,8 @@
   <%= @cliente.info %>
 </p>
 
-<%= link_to 'Editar', edit_cliente_path(@cliente) %> |
-<%= link_to 'Voltar', clientes_path %> |
-<%= link_to 'Nova agenda', new_cliente_agenda_path(@cliente) %> |
-<%= link_to 'Mostrar agendas', cliente_agendas_path(@cliente) %>
+<%= link_to 'Editar', edit_cliente_path(@cliente) %> </br>
+<%= link_to 'Voltar', clientes_path %> </br>
+<%= link_to 'Nova agenda', new_cliente_agenda_path(@cliente) %> </br>
+<%= link_to 'Mostrar agendas', cliente_agendas_path(@cliente) %> </br>
+<%= link_to 'Criar orçamento', new_cliente_orcamento_path(@cliente) %> 

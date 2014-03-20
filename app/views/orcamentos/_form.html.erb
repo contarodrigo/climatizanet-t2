@@ -1,4 +1,4 @@
-<%= form_for(@orcamento) do |f| %>
+<%= form_for([@orcamento.cliente, @orcamento]) do |f| %>
   <% if @orcamento.errors.any? %>
     <div id="error_explanation">
       <h2> Erro ao salvar registro! Favor verificar. </h2>

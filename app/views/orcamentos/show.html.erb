@@ -1,2 +1,3 @@
-<%= link_to 'Editar', edit_orcamento_path(@orcamento) %> |
-<%= link_to 'Voltar', orcamentos_path %>
+<%= link_to 'Editar', edit_cliente_orcamento_path(@orcamento.cliente, @orcamento) %> |
+<%= link_to 'Voltar', cliente_orcamentos_path(@orcamento.cliente) %>
+

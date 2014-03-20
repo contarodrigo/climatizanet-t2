@@ -13,6 +13,10 @@ ClimatizanetT2::Application.routes.draw do
   resources :clientes do
     resources :agendas
   end
+
+  resources :clientes do
+    resources :orcamentos
+  end
   
   resources :agendas
   #linha abaixo acho que nçoa precisa pois nçao temos validaçao por email

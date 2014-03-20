@@ -5,61 +5,71 @@ class OrcamentosController < ApplicationController
   # GET /orcamentos
   # GET /orcamentos.json
   def index
-    @orcamentos = Orcamento.all
+    cliente = Cliente.find(params[:cliente_id])
+
+    @orcamentos = cliente.orcamentos
   end
 
   # GET /orcamentos/1
   # GET /orcamentos/1.json
   def show
+    cliente = Cliente.find(params[:cliente_id])
+
+    @orcamento = cliente.orcamentos.find(params[:id]) 
   end
 
   # GET /orcamentos/new
   def new
-    @orcamento = Orcamento.new
+    cliente = Cliente.find(params[:cliente_id])
+
+    @orcamento = cliente.orcamentos.build
   end
 
   # GET /orcamentos/1/edit
   def edit
+    cliente = Cliente.find(params[:cliente_id])
+
+    @orcamento = cliente.orcamentos.find(params[:id])
   end
 
   # POST /orcamentos
   # POST /orcamentos.json
   def create
-    @orcamento = Orcamento.new(orcamento_params)
+    cliente = Cliente.find(params[:cliente_id])
 
-    respond_to do |format|
-      if @orcamento.save
-        format.html { redirect_to @orcamento, notice: 'Orcamento criado com sucesso!' }
-        format.json { render action: 'show', status: :created, location: @orcamento }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @orcamento.errors, status: :unprocessable_entity }
-      end
+    @orcamento = cliente.orcamentos.create(orcamento_params)
+
+    if @orcamento.save
+      redirect_to([@orcamento.cliente, @orcamento], notice: 'Oramento criada com sucesso!')
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /orcamentos/1
   # PATCH/PUT /orcamentos/1.json
   def update
-    respond_to do |format|
-      if @orcamento.update(orcamento_params)
-        format.html { redirect_to @orcamento, notice: 'Orcamento alterado com sucesso!' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @orcamento.errors, status: :unprocessable_entity }
-      end
+    cliente = Cliente.find(params[:cliente_id])
+
+    @orcamento = cliente.orcamentos.find(params[:id])
+
+    if @orcamento.update(orcamento_params)
+      redirect_to([@orcamento.cliente,@orcamento], notice: 'Oramento alterado com sucesso!')
+    else
+      render action: 'edit'
     end
+
   end
 
   # DELETE /orcamentos/1
   # DELETE /orcamentos/1.json
   def destroy
+    cliente = Cliente.find(params[:cliente_id])
+
+    @orcamento = cliente.orcamentos.find(params[:id])
+
     @orcamento.destroy
-    respond_to do |format|
-      format.html { redirect_to orcamentos_url }
-      format.json { head :no_content }
-    end
+    redirect_to cliente_orcamentos_url
   end
 
   private
