@@ -5,4 +5,12 @@ class Equipamento < ActiveRecord::Base
 	validates_presence_of :descricao
 
 	validates_uniqueness_of :descricao
+
+	def self.search(query)
+		if query.present?
+			where(['descricao LIKE :query ', query: "%#{query}%"])
+		else
+			scoped
+		end
+	end
 end

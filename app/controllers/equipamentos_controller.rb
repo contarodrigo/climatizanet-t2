@@ -5,12 +5,15 @@ class EquipamentosController < ApplicationController
   # GET /equipamentos
   # GET /equipamentos.json
   def index
-    @equipamentos = Equipamento.all
+    @search_query = params[:q]
+
+    @equipamentos = usuario_corrente.equipamentos.search(@search_query)
   end
 
   # GET /equipamentos/1
   # GET /equipamentos/1.json
   def show
+    @equipamento = usuario_corrente.equipamentos.find(params[:id])
   end
 
   # GET /equipamentos/new
@@ -20,46 +23,47 @@ class EquipamentosController < ApplicationController
 
   # GET /equipamentos/1/edit
   def edit
+    @equipamento = usuario_corrente.equipamentos.find(params[:id]) 
   end
 
   # POST /equipamentos
   # POST /equipamentos.json
   def create
-    @equipamento = Equipamento.new(equipamento_params)
+    @equipamento = usuario_corrente.equipamentos.build(equipamento_params)
 
-    respond_to do |format|
-      if @equipamento.save
-        format.html { redirect_to @equipamento, notice: 'Equipamento registrado com sucesso!' }
-        format.json { render action: 'show', status: :created, location: @equipamento }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @equipamento.errors, status: :unprocessable_entity }
-      end
+    if @equipamento.save
+      #O métodoredirect_toenvia ao browser do usuário um código de resposta
+      #“302” que signi!ca “Moved Temporarily”, dizendo ao navegador que ele deve ir para
+      #outro endereço. tambem estamos escrevendo uma mensagem via "flash", 
+      # Quando você escreve no flash, o conteúdo só estará disponível na próxima requisição. Por isso, é
+      #normalmente utilizado em conjunto com redireções.
+      redirect_to @equipamento, notice: 'Equipamento criado com sucesso!'
+    else
+      #redirecionar, perdemos todos os parâmetros que o usuário enviou e também as mensagens
+      #de erro de validação quando executamos o método #save. Para essas
+      #situações, devemos usar o#render, que não causa o redirecionamento.
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /equipamentos/1
   # PATCH/PUT /equipamentos/1.json
   def update
-    respond_to do |format|
-      if @equipamento.update(equipamento_params)
-        format.html { redirect_to @equipamento, notice: 'Equipamento was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @equipamento.errors, status: :unprocessable_entity }
-      end
+    @equipamento = usuario_corrente.equipamentos.find(params[:id])
+
+    if @equipamento.update(equipamento_params)
+      redirect_to @equipamento, notice: 'Equipamento alterado com sucesso!'
+    else
+      render action: 'edit'
     end
   end
 
   # DELETE /equipamentos/1
   # DELETE /equipamentos/1.json
   def destroy
+    @equipamento = usuario_corrente.equipamentos.find(params[:id])
     @equipamento.destroy
-    respond_to do |format|
-      format.html { redirect_to equipamentos_url }
-      format.json { head :no_content }
-    end
+      redirect_to equipamentos_url
   end
 
   private
