@@ -2,6 +2,10 @@ ClimatizanetT2::Application.routes.draw do
   
   resources :equipamentos
 
+  resources :orcamentos do
+    resources :items
+  end
+
   resources :items
 
   resources :orcamentos
@@ -17,6 +21,8 @@ ClimatizanetT2::Application.routes.draw do
   resources :clientes do
     resources :orcamentos
   end
+
+
   
   resources :agendas
   #linha abaixo acho que nçoa precisa pois nçao temos validaçao por email

@@ -5,61 +5,68 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    orcamento = Orcamento.find(params[:orcamento_id])
+
+    @items = orcamento.items
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    orcamento = Orcamento.find(params[:orcamento_id])
+
+    @item = orcamento.items.find(params[:id]) 
   end
 
   # GET /items/new
   def new
-    @item = Item.new
+    orcamento = Orcamento.find(params[:orcamento_id])
+
+    @item = orcamento.items.build
   end
 
   # GET /items/1/edit
   def edit
+    orcamento = Orcamento.find(params[:orcamento_id])
+
+    @item = orcamento.items.find(params[:id]) 
   end
 
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(item_params)
+    orcamento = Orcamento.find(params[:orcamento_id])
 
-    respond_to do |format|
+    @item = orcamento.items.create(item_params)
+
       if @item.save
-        format.html { redirect_to @item, notice: 'Item Criado com sucesso' }
-        format.json { render action: 'show', status: :created, location: @item }
+        redirect_to([@item.orcamento, @item], notice: 'Item criada com sucesso!')
       else
-        format.html { render action: 'new' }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        render action: 'new'
       end
-    end
   end
 
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
-    respond_to do |format|
-      if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item alterado com sucesso!' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
+    orcamento = Orcamento.find(params[:orcamento_id])
+    @item = orcamento.items.find(params[:id])
+
+    if @item.update(item_params)
+      redirect_to([@item.orcamento, @item], notice: 'Agenda alterada com sucesso!')
+    else
+      render action: 'edit'
     end
   end
 
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    orcamento = Orcamento.find(params[:orcamento_id])
+    @item = orcamento.items.find(params[:id])
+
     @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url }
-      format.json { head :no_content }
-    end
+    redirect_to orcamento_items_url
   end
 
   private

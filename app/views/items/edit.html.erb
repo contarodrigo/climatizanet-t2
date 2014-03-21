@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Mostrar', @item %> |
-<%= link_to 'Voltar', items_path %>
+<%= link_to 'Mostrar', [@item.orcamento, @item] %>
+<%= link_to 'Voltar', orcamento_items_path(@item.orcamento) %>

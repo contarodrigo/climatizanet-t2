@@ -20,13 +20,13 @@
     <p class="created">
       <%= item.valor %>
     </p>
-        <t><%= link_to 'Mostrar', item , id: "button1",  class: "button1" %></t>
-        <t><%= link_to 'Editar', edit_item_path(item) , id: "button1",  class: "button1" %></t>
-        <t><%= link_to 'Excluir', item, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Mostrar', [item.orcamento, item] , id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Editar', edit_orcamento_item_path(item.orcamento, item) , id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Excluir',  [item.orcamento, item], method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
   </article>
 <% end %>
 
 
 <br>
 
-<%= link_to 'Novo', new_item_path ,  id: "newButton",  class: "newButton"%>
+<%= link_to 'Nova item', new_orcamento_item_path, id: "newButton",  class: "newButton"%>
