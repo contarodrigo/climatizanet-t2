@@ -215,6 +215,14 @@ article {
 	@include shadow(#ccc, 0, 3px, 6px);
 }
 
+.showTable {
+	background-color: white;
+	padding: 10px 25px 25px 20px;
+	margin-top: 5px;
+	@include shadow(#ccc, 0, 3px, 6px);
+	cellspacing: 10px;
+}
+
 
 #error_explanation {
 	border: 1px solid $error-text-color;
