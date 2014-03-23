@@ -1,37 +1,35 @@
-<p>
-  <strong>Descrição:</strong>
-  <%= @equipamento.descricao %>
-</p>
+ <h1 id="title" class="title"> <%= @equipamento.descricao %></h1>
 
-<p>
-  <strong>Marca:</strong>
-  <%= @equipamento.marca %>
-</p>
+<table  id="showTable" class="showTable">
+  <tr>
+    <td><strong>Marca:</strong></td>
+    <td><%= @equipamento.marca %></td>
+  </tr>
 
-<p>
-  <strong>Fornecedor:</strong>
-  <%= @equipamento.fornecedor %>
-</p>
+  <tr>
+    <td><strong>Fornecedor:</strong></td>
+    <td><%= @equipamento.fornecedor %></td>
+  </tr>
 
-<p>
-  <strong>Potência:</strong>
-  <%= @equipamento.potencia %>
-</p>
+  <tr>
+    <td><strong>Potência:</strong></td>
+    <td><%= @equipamento.potencia %></td>
+  </tr>
 
-<p>
-  <strong>Tipo:</strong>
-  <%= @equipamento.tipo %>
-</p>
+  <tr>
+    <td><strong>Tipo:</strong></td>
+    <td><%= @equipamento.tipo %></td>
+  </tr>
 
-<p>
-  <strong>Modelo:</strong>
-  <%= @equipamento.modelo %>
-</p>
+  <tr>
+    <td><strong>Modelo:</strong></td>
+    <td><%= @equipamento.modelo %><td>
+  </tr>
 
-<p>
-  <strong>Informações adicionais:</strong>
-  <%= @equipamento.info %>
-</p>
-
-<%= link_to 'Editar', edit_equipamento_path(@equipamento) %> |
-<%= link_to 'Voltar', equipamentos_path %>
+  <tr>
+    <td><strong>Informações adicionais:</strong></td>
+    <td><%= @equipamento.info %></td>
+  </tr>
+</table> </br>
+<%= link_to 'Editar', edit_equipamento_path(@equipamento),id: "button1",  class: "button1" %> |
+<%= link_to 'Voltar', equipamentos_path,id: "button1",  class: "button1" %>
