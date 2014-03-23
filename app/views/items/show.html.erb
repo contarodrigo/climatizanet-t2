@@ -28,5 +28,5 @@
   <%= @item.valor %>
 </p>
 
-<%= link_to 'Editar', edit_orcamento_item_path(@item.orcamento, @item) %> |
-<%= link_to 'Voltar', orcamento_items_path(@item.orcamento) %>
+<%= link_to 'Editar', edit_orcamento_item_path(@item.orcamento, @item) ,id: "button1",  class: "button1"%> |
+<%= link_to 'Voltar', orcamento_items_path(@item.orcamento) ,id: "button1",  class: "button1"%>
