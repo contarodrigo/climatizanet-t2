@@ -1,25 +1,21 @@
 <h1>Orçamentos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @orcamentos.each do |orcamento| %>
-      <tr>
-        <td><%= link_to 'Mostrar',[orcamento.cliente, orcamento] ,id: "button1",  class: "button1" %></td>
-        <td><%= link_to 'Editar', edit_cliente_orcamento_path(orcamento.cliente, orcamento) ,id: "button1",  class: "button1" %></td>
-        <td><%= link_to 'Excluir', [orcamento.cliente, orcamento], method: :delete, data: { confirm: 'Are you sure?' },id: "button1",  class: "button1" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @orcamentos.each do |orcamento| %>
+    <article class="equipamento">
+      <p class="created">
+        <%= orcamento.descricao %>
+      </p>
+      
+      <p class="created">
+        <%= orcamento.validade %>
+      </p>
+      
+      <t><%= link_to 'Mostrar',[orcamento.cliente, orcamento] ,id: "button1",  class: "button1" %></t>
+      <t><%= link_to 'Editar', edit_cliente_orcamento_path(orcamento.cliente, orcamento) ,id: "button1",  class: "button1" %></t>
+      <t><%= link_to 'Excluir', [orcamento.cliente, orcamento], method: :delete, data: { confirm: 'Are you sure?' },id: "button1",  class: "button1" %></t>
+    </article>
+  <% end %>
+  <br>
 
-<br>
-
-<%= link_to 'Novo', new_cliente_orcamento_path, id: "newButton",  class: "newButton"%>
+  <%= link_to 'Novo', new_cliente_orcamento_path, id: "newButton",  class: "newButton"%>
