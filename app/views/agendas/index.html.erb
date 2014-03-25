@@ -4,11 +4,20 @@
 
   <article class="equipamento">
     <p class="created">
-      <%= agenda.data %>
+      <strong> <%= agenda.cliente.nome %> </strong> 
+    </p>    
+    <p class="created">
+      <%= agenda.data.strftime("%d de %B de %Y") %>
     </p>
     <p class="created">
-      <%= agenda.hora %>
+      <%= agenda.hora.strftime("%H:%M ")%>
     </p>
+    <p class="created">
+      <%= agenda.tipo_agenda %>
+    </p>  
+    <p class="created">
+      <%= agenda.observacao %>
+    </p> 
 
     <t><%= link_to 'Mostrar', [agenda.cliente, agenda] , id: "button1",  class: "button1" %></t>
     <t><%= link_to 'Editar', edit_cliente_agenda_path(agenda.cliente, agenda) , id: "button1",  class: "button1" %></t>

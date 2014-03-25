@@ -8,59 +8,61 @@
     <td><%= @cliente.endereco %></td>
   </tr>
 
-<tr>
-  <td><strong>Cep:</strong></td>
-  <td><%= @cliente.cep %></td>
-</tr>
+  <tr>
+    <td><strong>Cep:</strong></td>
+    <td><%= @cliente.cep %></td>
+  </tr>
 
-<tr>
-  <td><strong>Email:</strong></td>
-  <td><%= @cliente.email %></td>
-</tr>
+  <tr>
+    <td><strong>Email:</strong></td>
+    <td><%= @cliente.email %></td>
+  </tr>
 
-<tr>
-  <td><strong>Bairro:</strong></td>
-  <td><%= @cliente.bairro %></td>
-</tr>
+  <tr>
+    <td><strong>Bairro:</strong></td>
+    <td><%= @cliente.bairro %></td>
+  </tr>
 
-<tr>
-  <td><strong>Municipio:</strong></td>
-  <td><%= @cliente.municipio %></td>
-</tr>
+  <tr>
+    <td><strong>Municipio:</strong></td>
+    <td><%= @cliente.municipio %></td>
+  </tr>
 
-<tr>
-  <td><strong>Estado:</strong></td>
-  <td><%= @cliente.estado %></td>
-</tr>
+  <tr>
+    <td><strong>Estado:</strong></td>
+    <td><%= @cliente.estado %></td>
+  </tr>
 
-<tr>
-  <td><strong>Telefone:</strong></td>
-  <td><%= @cliente.telefone %></td>
-</tr>
+  <tr>
+    <td><strong>Telefone:</strong></td>
+    <td><%= @cliente.telefone %></td>
+  </tr>
 
-<tr>
-  <td><strong>Celular:</strong></td>
-  <td><%= @cliente.celular %></td>
-</tr>
+  <tr>
+    <td><strong>Celular:</strong></td>
+    <td><%= @cliente.celular %></td>
+  </tr>
 
-<tr>
-  <td><strong>Cpf:</strong></td>
-  <td><%= @cliente.cpf %></td>
-</tr>
+  <tr>
+    <td><strong>Cpf:</strong></td>
+    <td><%= @cliente.cpf %></td>
+  </tr>
 
-<tr>
-  <td><strong>Rg:</strong></td>
-  <td><%= @cliente.rg %></td>
-</tr>
+  <tr>
+    <td><strong>Rg:</strong></td>
+    <td><%= @cliente.rg %></td>
+  </tr>
 
-<tr>
-  <td><strong>Info:</strong></td>
-  <td><%= @cliente.info %></td>
-</tr>
+  <tr>
+    <td><strong>Info:</strong></td>
+    <td><%= @cliente.info %></td>
+  </tr>
 </table> </br>
-<t><%= link_to 'Editar', edit_cliente_path(@cliente),id: "button1",  class: "button1" %> </t>
-<t><%= link_to 'Voltar', clientes_path,id: "button1",  class: "button1" %> </t>
+
 <t><%= link_to 'Nova agenda', new_cliente_agenda_path(@cliente),id: "button1",  class: "button1" %> </t>
 <t><%= link_to 'Mostrar agendas', cliente_agendas_path(@cliente),id: "button1",  class: "button1" %> </t>
 <t><%= link_to 'Criar orçamento', new_cliente_orcamento_path(@cliente),id: "button1",  class: "button1" %> </t>
 <t><%= link_to 'Mostrar orçamentos', cliente_orcamentos_path(@cliente),id: "button1",  class: "button1" %> </t>
+</br></br>
+<t><%= link_to 'Editar', edit_cliente_path(@cliente),id: "button1",  class: "button1" %> </t>
+<t><%= link_to 'Voltar', clientes_path,id: "button1",  class: "button1" %> </t>

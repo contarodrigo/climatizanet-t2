@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310224528) do
+ActiveRecord::Schema.define(version: 20140321020839) do
 
   create_table "agendas", force: true do |t|
     t.date     "data"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20140310224528) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cliente_id"
+    t.string   "observacao"
+    t.string   "tipo_agenda"
   end
 
   add_index "agendas", ["cliente_id"], name: "index_agendas_on_cliente_id"

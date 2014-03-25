@@ -1,12 +1,29 @@
-<p>
-  <strong>Data:</strong>
-  <%= @agenda.data %>
+<p >
+  <h3 id="title" class="title"><%= @agenda.cliente.nome %> </h3>
 </p>
 
-<p>
-  <strong>Hora:</strong>
-  <%= @agenda.hora %>
-</p>
+<table id="showTable" class="showTable">
+	<tr>
+	  <td><strong>Data:</strong></td>
+	 	<td><%= @agenda.data.strftime("%d de %B de %Y") %></td>
+	</tr>
+
+	<tr>
+	  <td><strong>Hora:</strong></td>
+	  <td><%= @agenda.hora.strftime("%H:%M ") %></td>
+	</tr>
+
+	<tr>
+	  <td><strong>Tipo agenda:</strong></td>
+	  <td><%= @agenda.tipo_agenda %></td>
+	</tr>
+
+	<tr>
+	  <td><strong>Observação:</strong></td>
+	  <td><%= @agenda.observacao %></td>
+	</tr>
+</table>
+</br>
 
 <%= link_to 'Editar', edit_cliente_agenda_path(@agenda.cliente, @agenda) ,id: "button1",  class: "button1"%> |
 <%= link_to 'Voltar', cliente_agendas_path(@agenda.cliente),id: "button1",  class: "button1" %>

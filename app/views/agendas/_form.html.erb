@@ -15,6 +15,16 @@
     <%= f.time_select :hora %>
     <%= error_tag @agenda, :hora %>
   </div>
+  <div class="field">
+    <%= f.label "Tipo agenda" %>
+    <%= f.select :tipo_agenda, ['Visita', 'Orçamento', 'Manutenção', 'Outros'] %>
+    <%= error_tag @agenda, :tipo_agenda %>
+  </div>
+  <div class="field">
+    <%= f.label "Observação" %>
+    <%= f.text_area :observacao %>
+    <%= error_tag @agenda, :observacao %>
+  </div>  
   <div class="actions">
     <%= f.submit %>
   </div>
