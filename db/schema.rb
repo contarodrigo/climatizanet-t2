@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324225911) do
+ActiveRecord::Schema.define(version: 20140321020839) do
 
   create_table "agendas", force: true do |t|
     t.date     "data"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20140324225911) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cliente_id"
+    t.string   "observacao"
+    t.string   "tipo_agenda"
   end
 
   add_index "agendas", ["cliente_id"], name: "index_agendas_on_cliente_id"
@@ -68,7 +70,6 @@ ActiveRecord::Schema.define(version: 20140324225911) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "orcamento_id"
-    t.string   "descricao"
   end
 
   add_index "items", ["orcamento_id"], name: "index_items_on_orcamento_id"
@@ -77,8 +78,6 @@ ActiveRecord::Schema.define(version: 20140324225911) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cliente_id"
-    t.string   "descricao"
-    t.date     "validade"
   end
 
   add_index "orcamentos", ["cliente_id"], name: "index_orcamentos_on_cliente_id"
