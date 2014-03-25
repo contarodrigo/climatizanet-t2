@@ -2,7 +2,7 @@
 
 <% @agendas.each do |agenda| %>
 
-  <article class="equipamento">
+  <article>
     <p class="created">
       <strong> <%= agenda.cliente.nome %> </strong> 
     </p>    
@@ -19,9 +19,9 @@
       <%= agenda.observacao %>
     </p> 
 
-    <t><%= link_to 'Mostrar', [agenda.cliente, agenda] , id: "button1",  class: "button1" %></t>
-    <t><%= link_to 'Editar', edit_cliente_agenda_path(agenda.cliente, agenda) , id: "button1",  class: "button1" %></t>
-    <t><%= link_to 'Excluir',  [agenda.cliente, agenda], method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Mostrar', [agenda.cliente, agenda] , class: "action_button" %></t>
+    <t><%= link_to 'Editar', edit_cliente_agenda_path(agenda.cliente, agenda) , class: "action_button" %></t>
+    <t><%= link_to 'Excluir',  [agenda.cliente, agenda], method: :delete, data: { confirm: 'Você realmente deseja excluir?' },  class: "action_button" %></t>
   </article>
 <% end %>
 

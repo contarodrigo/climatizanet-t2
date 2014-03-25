@@ -11,9 +11,9 @@
         <%= orcamento.validade %>
       </p>
       
-      <t><%= link_to 'Mostrar',[orcamento.cliente, orcamento] ,id: "button1",  class: "button1" %></t>
-      <t><%= link_to 'Editar', edit_cliente_orcamento_path(orcamento.cliente, orcamento) ,id: "button1",  class: "button1" %></t>
-      <t><%= link_to 'Excluir', [orcamento.cliente, orcamento], method: :delete, data: { confirm: 'Are you sure?' },id: "button1",  class: "button1" %></t>
+      <t><%= link_to 'Mostrar',[orcamento.cliente, orcamento] , class: "action_button" %></t>
+      <t><%= link_to 'Editar', edit_cliente_orcamento_path(orcamento.cliente, orcamento) , class: "action_button" %></t>
+      <t><%= link_to 'Excluir', [orcamento.cliente, orcamento], method: :delete, data: { confirm: 'Are you sure?' }, class: "action_button" %></t>
     </article>
   <% end %>
   <br>

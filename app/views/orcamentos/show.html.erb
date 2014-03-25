@@ -27,15 +27,15 @@
       <%= item.valor %>
     </p>
 
-    <t><%= link_to 'Mostrar', [item.orcamento, item] , id: "button1",  class: "button1" %></t>
-    <t><%= link_to 'Editar', edit_orcamento_item_path(item.orcamento, item) , id: "button1",  class: "button1" %></t>
-    <t><%= link_to 'Excluir',  [item.orcamento, item], method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+    <t><%= link_to 'Mostrar', [item.orcamento, item] , class: "action_button" %></t>
+    <t><%= link_to 'Editar', edit_orcamento_item_path(item.orcamento, item) , class: "action_button" %></t>
+    <t><%= link_to 'Excluir',  [item.orcamento, item], method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, class: "action_button" %></t>
   </article>
 <% end %>
 
 </br>
 
-<%= link_to 'Editar', edit_cliente_orcamento_path(@orcamento.cliente, @orcamento) ,id: "button1",  class: "button1"%> 
-<%= link_to 'Voltar', cliente_orcamentos_path(@orcamento.cliente) ,id: "button1",  class: "button1"%>
-<%= link_to 'Novo item', new_orcamento_item_path(@orcamento) ,id: "button1",  class: "button1"%> 
+<%= link_to 'Editar', edit_cliente_orcamento_path(@orcamento.cliente, @orcamento) , class: "action_button"%> 
+<%= link_to 'Voltar', cliente_orcamentos_path(@orcamento.cliente) , class: "action_button"%>
+<%= link_to 'Novo item', new_orcamento_item_path(@orcamento) ,  class: "action_button"%> 
 

@@ -1,3 +1,4 @@
+#encoding: utf-8
 class OrcamentosController < ApplicationController
   before_action :set_orcamento, only: [:show, :edit, :update, :destroy]
   before_action :require_authentication, only: [:index, :new, :edit, :show, :create, :update, :destroy]
@@ -40,7 +41,7 @@ class OrcamentosController < ApplicationController
     @orcamento = cliente.orcamentos.create(orcamento_params)
 
     if @orcamento.save
-      redirect_to([@orcamento.cliente, @orcamento], notice: 'Oramento criada com sucesso!')
+      redirect_to([@orcamento.cliente, @orcamento], notice: 'Orçamento criada com sucesso!')
     else
       render action: 'new'
     end
@@ -54,7 +55,7 @@ class OrcamentosController < ApplicationController
     @orcamento = cliente.orcamentos.find(params[:id])
 
     if @orcamento.update(orcamento_params)
-      redirect_to([@orcamento.cliente,@orcamento], notice: 'Oramento alterado com sucesso!')
+      redirect_to([@orcamento.cliente,@orcamento], notice: 'Orçamento alterado com sucesso!')
     else
       render action: 'edit'
     end
@@ -80,6 +81,6 @@ class OrcamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def orcamento_params
-      params[:orcamento]
-    end
+      params.require(:orcamento).permit(:descricao, :validade, :cliente_id)      
+    end   
 end

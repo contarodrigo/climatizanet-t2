@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Mostrar', [@item.orcamento, @item] ,id: "button1",  class: "button1"%>
-<%= link_to 'Voltar', orcamento_items_path(@item.orcamento) ,id: "button1",  class: "button1"%>
+<%= link_to 'Mostrar', [@item.orcamento, @item] , class: "action_button"%>
+<%= link_to 'Voltar', orcamento_items_path(@item.orcamento) , class: "action_button"%>

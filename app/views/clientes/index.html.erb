@@ -25,9 +25,9 @@
           <%= highlight(cliente.cpf || '', @search_query) %>
         </p>
     </p>
-        <t><%= link_to 'Mostrar', cliente , id: "button1",  class: "button1" %></t>
-        <t><%= link_to 'Editar', edit_cliente_path(cliente) , id: "button1",  class: "button1" %></t>
-        <t><%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Mostrar', cliente , class: "action_button" %></t>
+        <t><%= link_to 'Editar', edit_cliente_path(cliente) , class: "action_button" %></t>
+        <t><%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, class: "action_button" %></t>
   </article>
 <% end %>
 
