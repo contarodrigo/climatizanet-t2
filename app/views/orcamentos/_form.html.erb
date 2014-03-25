@@ -5,6 +5,18 @@
     </div>
   <% end %>
 
+   <div class="field">
+    <%= f.label "Descricao" %>
+    <%= f.text_field :descricao %>
+    <%= error_tag @orcamento, :descricao %>
+  </div>
+
+   <div class="field">
+    <%= f.label "Validade" %>
+    <%= f.date_select :validade %>
+    <%= error_tag @orcamento, :validade %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
