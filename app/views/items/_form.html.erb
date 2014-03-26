@@ -12,24 +12,19 @@
   </div>
 
   <div class="field">
-    <%= f.label "Quantidade de equipamentos" %>
-    <%= f.text_field :qtdequipamento %>
+    <%= f.label "Quantidade" %>
+    <%= f.number_field :qtdequipamento %>
     <%= error_tag @item, :qtdequipamento %>
-  </div>
-  <div class="field">
-    <%= f.label "Quantidade de tubulação" %>
-    <%= f.text_field :qtdtubulacao %>
-    <%= error_tag @item, :qtdtubulacao %>
-  </div>
-  <div class="field">
-    <%= f.label "Quantidade extra" %>
-    <%= f.text_field :qtdextra %>
-    <%= error_tag @item, :qtdextra %>
   </div>
   <div class="field">
     <%= f.label "Tubulação" %>
     <%= f.text_field :tubulacao %>
     <%= error_tag @item, :tubulacao %>
+  <div class="field">
+    <%= f.label "Quantidade de tubulação" %>
+    <%= f.number_field :qtdtubulacao %>
+    <%= error_tag @item, :qtdtubulacao %>
+  </div>
   </div>
   <div class="field">
     <%= f.label "Extras" %>
@@ -37,8 +32,13 @@
     <%= error_tag @item, :extra %>
   </div>
   <div class="field">
+    <%= f.label "Quantidade extra" %>
+    <%= f.number_field :qtdextra %>
+    <%= error_tag @item, :qtdextra %>
+  </div>
+  <div class="field">
     <%= f.label "Valor" %>
-    <%= f.text_field :valor %>
+    <%= f.number_field :valor %>
     <%= error_tag @item, :valor %>
   </div>
   <div class="actions">

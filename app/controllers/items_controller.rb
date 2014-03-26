@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
     orcamento = Orcamento.find(params[:orcamento_id])
 
     @items = orcamento.items
+    @orcamento = orcamento
   end
 
   # GET /items/1
@@ -17,6 +18,7 @@ class ItemsController < ApplicationController
 
     @item = orcamento.items.find(params[:id]) 
     @items = orcamento.items
+    @orcamento = orcamento
   end
 
   # GET /items/new
@@ -25,6 +27,7 @@ class ItemsController < ApplicationController
 
     @item = orcamento.items.build
     @items = orcamento.items
+    @orcamento = orcamento
   end
 
   # GET /items/1/edit
@@ -33,6 +36,7 @@ class ItemsController < ApplicationController
 
     @item = orcamento.items.find(params[:id]) 
     @items = orcamento.items
+    @orcamento = orcamento
   end
 
   # POST /items
@@ -42,8 +46,8 @@ class ItemsController < ApplicationController
 
     @item = orcamento.items.create(item_params)
     @items = orcamento.items 
-    redirect_to new_orcamento_item_path 
-    
+    @orcamento = orcamento
+    redirect_to new_orcamento_item_path   
   end
 
   # PATCH/PUT /items/1
@@ -52,6 +56,7 @@ class ItemsController < ApplicationController
     orcamento = Orcamento.find(params[:orcamento_id])
     @item = orcamento.items.find(params[:id])
     @items = orcamento.items 
+    @orcamento = orcamento
 
     redirect_to new_orcamento_item_path
   end
@@ -61,6 +66,7 @@ class ItemsController < ApplicationController
   def destroy
     orcamento = Orcamento.find(params[:orcamento_id])
     @item = orcamento.items.find(params[:id])
+    @orcamento = orcamento
 
     @item.destroy
     redirect_to orcamento_items_url

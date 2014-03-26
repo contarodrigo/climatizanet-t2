@@ -40,11 +40,7 @@ class OrcamentosController < ApplicationController
 
     @orcamento = cliente.orcamentos.create(orcamento_params)
 
-    if @orcamento.save
-      redirect_to([@orcamento.cliente, @orcamento], notice: 'Orçamento criada com sucesso!')
-    else
-      render action: 'new'
-    end
+    redirect_to new_orcamento_item_path(@orcamento)
   end
 
   # PATCH/PUT /orcamentos/1

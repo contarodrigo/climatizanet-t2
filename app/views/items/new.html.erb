@@ -8,30 +8,32 @@
 <%= render 'form' %>
 
 <% @items.each do |item| %>
-  <article class="item">
-  	<p class="created">
-      <%= item.descricao %>
-    </p>
-    <p class="created">
-      <%= item.qtdequipamento %>
-    </p>
-    <p class="created">
-      <%= item.qtdtubulacao %>
-    </p>
-    <p class="created">
-      <%= item.qtdextra %>
-    </p>
-    <p class="created">
-      <%= item.tubulacao %>
-    </p>
-    <p class="created">
-      <%= item.extra %>
-    </p>
-    <p class="created">
-      <%= item.valor %>
-    </p>
-    
-  </article>
+    <% if item.descricao != "" %>
+    <article class="item">
+      <p class="created">
+        <%= item.descricao %>
+      </p>
+      <p class="created">
+        <%= item.qtdequipamento %>
+      </p>
+      <p class="created">
+        <%= item.qtdtubulacao %>
+      </p>
+      <p class="created">
+        <%= item.qtdextra %>
+      </p>
+      <p class="created">
+        <%= item.tubulacao %>
+      </p>
+      <p class="created">
+        <%= item.extra %>
+      </p>
+      <p class="created">
+        <%= item.valor %>
+      </p>
+      
+    </article>
+  <% end %>
 <% end %>
 
-<%= link_to 'Voltar', orcamento_items_path(@item.orcamento) , class: "action_button"%>
+<%= link_to 'Voltar', cliente_orcamentos_path(@orcamento) , class: "action_button"%>
