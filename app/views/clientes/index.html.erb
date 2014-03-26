@@ -31,7 +31,6 @@
   </article>
 <% end %>
 
-
-<br>
+<%= paginate @clientes %>
 
 <%= link_to 'Novo', new_cliente_path ,  id: "newButton",  class: "newButton"%>

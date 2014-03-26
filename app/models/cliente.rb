@@ -4,6 +4,8 @@ class Cliente < ActiveRecord::Base
 	has_many :agendas
 	validates_presence_of :nome, :email, :telefone
 
+	paginates_per 3
+
 
 	def self.search(query)
 		if query.present?
@@ -14,5 +16,4 @@ class Cliente < ActiveRecord::Base
 			scoped
 		end
 	end
-
 end

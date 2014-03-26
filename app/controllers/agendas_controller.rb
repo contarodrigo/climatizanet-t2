@@ -7,7 +7,7 @@ class AgendasController < ApplicationController
   def index
     cliente = Cliente.find(params[:cliente_id])
 
-    @agendas = cliente.agendas
+    @agendas = cliente.agendas.page params[:page]
   end
 
   # GET /agendas/1

@@ -4,7 +4,7 @@ class ClientesController < ApplicationController
   def index
     @search_query = params[:q]
 
-    @clientes = usuario_corrente.clientes.search(@search_query)
+    @clientes = usuario_corrente.clientes.search(@search_query).page params[:page]
 
   end
 

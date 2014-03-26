@@ -1,3 +1,5 @@
+
+
 <h1>Agendas</h1>
 
 <% @agendas.each do |agenda| %>
@@ -25,6 +27,6 @@
   </article>
 <% end %>
 
-<br>
+<%= paginate @agendas %>
 
 <%= link_to 'Nova Agenda', new_cliente_agenda_path, id: "newButton",  class: "newButton"%>

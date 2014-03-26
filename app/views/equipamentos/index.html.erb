@@ -12,9 +12,9 @@
           <%= equipamento.modelo %>
         </p>
     </p>
-        <t><%= link_to 'Mostrar', equipamento , id: "button1",  class: "button1" %></t>
-        <t><%= link_to 'Editar', edit_equipamento_path(equipamento) , id: "button1",  class: "button1" %></t>
-        <t><%= link_to 'Excluir', equipamento, method: :delete, data: { confirm: 'Você realmente deseja excluir?' }, id: "button1",  class: "button1" %></t>
+        <t><%= link_to 'Mostrar', equipamento ,  class: "action_button" %></t>
+        <t><%= link_to 'Editar', edit_equipamento_path(equipamento) , class: "action_button" %></t>
+        <t><%= link_to 'Excluir', equipamento, method: :delete, data: { confirm: 'Você realmente deseja excluir?' },  class: "action_button" %></t>
   </article>
 <% end %>
 
