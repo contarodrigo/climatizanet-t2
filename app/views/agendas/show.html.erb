@@ -5,7 +5,7 @@
 <table id="showTable" class="showTable">
 	<tr>
 	  <td><strong>Data:</strong></td>
-	 	<td><%= @agenda.data.strftime("%d de %B de %Y") %></td>
+	 	<td><%= l @agenda.data, format: :long_agenda %></td>
 	</tr>
 
 	<tr>

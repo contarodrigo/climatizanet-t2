@@ -7,7 +7,7 @@
       <strong> <%= agenda.cliente.nome %> </strong> 
     </p>    
     <p class="created">
-      <%= agenda.data.strftime("%d de %B de %Y") %>
+      <%= l agenda.data, format: :long_agenda %>
     </p>
     <p class="created">
       <%= agenda.hora.strftime("%H:%M ")%>
