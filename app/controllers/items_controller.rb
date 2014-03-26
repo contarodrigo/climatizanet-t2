@@ -69,7 +69,7 @@ class ItemsController < ApplicationController
     @orcamento = orcamento
 
     @item.destroy
-    redirect_to orcamento_items_url
+    redirect_to new_orcamento_item_path
   end
 
   private

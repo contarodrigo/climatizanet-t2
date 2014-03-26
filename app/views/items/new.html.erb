@@ -3,12 +3,18 @@
   <%= @item.orcamento.id %>
 </p>
 
+</br>
+
 <h1>Novo item</h1>
+
+</br>
 
 <%= render 'form' %>
 
+</br>
+
 <% @items.each do |item| %>
-    <% if item.descricao != "" %>
+    <% if item.descricao.present? %>
     <article class="item">
       <p class="created">
         <%= item.descricao %>
@@ -31,9 +37,11 @@
       <p class="created">
         <%= item.valor %>
       </p>
-      
+      <t><%= link_to 'Excluir',  [item.orcamento, item], method: :delete, data: { confirm: 'Você realmente deseja excluir?' },  class: "action_button" %></t>
     </article>
+
   <% end %>
 <% end %>
 
-<%= link_to 'Voltar', cliente_orcamentos_path(@orcamento) , class: "action_button"%>
+</br>
+<%= link_to 'Voltar', cliente_orcamentos_path(@item.orcamento) , class: "action_button"%>
