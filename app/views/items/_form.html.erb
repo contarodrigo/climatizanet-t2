@@ -6,6 +6,12 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "Descrição" %>
+    <%= f.text_field :descricao %>
+    <%= error_tag @item, :descricao %>
+  </div>
+
+  <div class="field">
     <%= f.label "Quantidade de equipamentos" %>
     <%= f.text_field :qtdequipamento %>
     <%= error_tag @item, :qtdequipamento %>

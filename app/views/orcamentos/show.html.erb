@@ -1,13 +1,14 @@
 <p id="title" class="title">
-  <strong >Orcamento:</strong>
+  <strong >Orçamento:</strong>
   <%= @orcamento.id %>
 </p>
 <p id="title" class="title">Itens</p>
 
-
-
 <% @orcamento.items.each do |item| %>
   <article class="item">
+    <p class="created">
+      <%= item.descricao %>
+    </p>
     <p class="created">
       <%= item.qtdequipamento %>
     </p>

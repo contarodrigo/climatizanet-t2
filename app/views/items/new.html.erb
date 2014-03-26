@@ -1,5 +1,37 @@
+<p id="title" class="title">
+  <strong >Orcamento:</strong>
+  <%= @item.orcamento.id %>
+</p>
+
 <h1>Novo item</h1>
 
 <%= render 'form' %>
+
+<% @items.each do |item| %>
+  <article class="item">
+  	<p class="created">
+      <%= item.descricao %>
+    </p>
+    <p class="created">
+      <%= item.qtdequipamento %>
+    </p>
+    <p class="created">
+      <%= item.qtdtubulacao %>
+    </p>
+    <p class="created">
+      <%= item.qtdextra %>
+    </p>
+    <p class="created">
+      <%= item.tubulacao %>
+    </p>
+    <p class="created">
+      <%= item.extra %>
+    </p>
+    <p class="created">
+      <%= item.valor %>
+    </p>
+    
+  </article>
+<% end %>
 
 <%= link_to 'Voltar', orcamento_items_path(@item.orcamento) , class: "action_button"%>
