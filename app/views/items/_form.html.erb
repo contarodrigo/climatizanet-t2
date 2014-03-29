@@ -11,37 +11,85 @@
     <%= error_tag @item, :descricao %>
   </div>
 
+  <div class="select">
+    <%= f.label "Equipamento" %>
+    <%= f.select :produto, ['Split','Janeleiro', 'VRF', 'Central', 'Água Gelada', 'Outros'] %>
+    <%= error_tag @item, :produto %>
+  </div></br>
+  
   <div class="field">
     <%= f.label "Quantidade" %>
     <%= f.number_field :qtdequipamento %>
     <%= error_tag @item, :qtdequipamento %>
   </div>
-  <div class="field">
+  
+  <div class="select">
+    <%= f.label "Tipo serviço" %>
+    <%= f.select :tipo_Servico, ['Instalação', 'Manutenção','Assistência', 'Retirada', 'Tranferência','Outros'] %>
+    <%= error_tag @item, :tipo_Servico %>
+  </div> </br>
+  
+  <div class="select">
+    <%= f.label "Tipo produto" %>
+    <%= f.select :tipo_produto, ['Equipamento','Tubulação', 'Hidráulica', 'Elétrica','Outros'] %>
+    <%= error_tag @item, :tipo_produto %>
+   </div></br>
+  
+   <div class="select">
+    <%= f.label "Potência" %>
+    <%= f.select :potencia, ['1','5', '10', '20', '50', '100', '7.000','9.000','12.000','18.000','22.000','24.000','30.000','36.000','48.000','60.000','80.000','90.0000', 'Outros'] %>
+    <%= error_tag @item, :potencia %>
+  </div></br>
+  
+  <div class="select">
+    <%= f.label "Potência" %>
+    <%= f.select :potencia, ['1','5', '10', '20', '50', '100', '7.000','9.000','12.000','18.000','22.000','24.000','30.000','36.000','48.000','60.000','80.000','90.0000', 'Outros'] %>
+    <%= error_tag @item, :potencia %>
+  </div></br>
+  
+  <div class="select">
+    <%= f.label "Unidade de medida" %>
+    <%= f.select :unidade_medida, ['BTU/H','TR','Outros'] %>
+    <%= error_tag @item, :unidade_medida %>
+  </div> </br>
+
+  <div class="select">
     <%= f.label "Tubulação" %>
-    <%= f.text_field :tubulacao %>
+    <%= f.select :tubulacao,['1/4 e 3/8', '1/4 e 1/2', '1/4 e 5/8', '1/4 e 3/4', '3/8 e 1/2', '3/8 e 5/8', '3/8 e 3/4', '3/8 e 1"','3/8 e 1+1/8'] %>
     <%= error_tag @item, :tubulacao %>
+  </div> </br>
+  
   <div class="field">
     <%= f.label "Quantidade de tubulação" %>
     <%= f.number_field :qtdtubulacao %>
     <%= error_tag @item, :qtdtubulacao %>
   </div>
-  </div>
+  
   <div class="field">
     <%= f.label "Extras" %>
     <%= f.text_field :extra %>
     <%= error_tag @item, :extra %>
   </div>
+  
   <div class="field">
     <%= f.label "Quantidade extra" %>
     <%= f.number_field :qtdextra %>
     <%= error_tag @item, :qtdextra %>
   </div>
+  
   <div class="field">
     <%= f.label "Valor" %>
     <%= f.number_field :valor %>
     <%= error_tag @item, :valor %>
-  </div>
+
+  <div class="field">
+    <%= f.label "Informações adicionais" %>
+    <%= f.text_area :info %>
+    <%= error_tag @item, :info %>
+  </div> 
+  </br>
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div></br>
+
 <% end %>

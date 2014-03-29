@@ -1,6 +1,11 @@
 <p id="title" class="title">
-  <strong >Orcamento:</strong>
-  <%= @item.orcamento.id %>
+  <%= @item.orcamento.cliente.nome %>
+</p> <br>
+
+<p id="title" class="title">
+  <t> Orçamento: </t>
+  <%= @item.orcamento.id %> </br>
+  <%= @item.orcamento.descricao %>
 </p>
 
 </br>
