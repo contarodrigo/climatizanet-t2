@@ -20,31 +20,84 @@
 
 <% @items.each do |item| %>
     <% if item.descricao.present? %>
-    <article class="item">
-      <p class="created">
-        <%= item.descricao %>
-      </p>
-      <p class="created">
-        <%= item.qtdequipamento %>
-      </p>
-      <p class="created">
-        <%= item.qtdtubulacao %>
-      </p>
-      <p class="created">
-        <%= item.qtdextra %>
-      </p>
-      <p class="created">
-        <%= item.tubulacao %>
-      </p>
-      <p class="created">
-        <%= item.extra %>
-      </p>
-      <p class="created">
-        <%= item.valor %>
-      </p>
-      <t><%= link_to 'Excluir',  [item.orcamento, item], method: :delete, data: { confirm: 'Você realmente deseja excluir?' },  class: "action_button" %></t>
-    </article>
+     <table  id="showTable" class="showTable">
+        <tr>
+          <td><strong>Descrição:</strong></td>
+          <td><%= item.descricao %></td>
+        </tr>
 
+        <tr>
+          <td><strong>Equipamento:</strong></td>
+          <td><%= item.produto %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Quantidade:</strong></td>
+          <td><%= item.qtdequipamento %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Tipo de serviço:</strong></td>
+          <td><%= item.tipo_Servico %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Tipo de produto:</strong></td>
+          <td><%= item.tipo_produto %><td>
+        </tr>
+
+        <tr>
+          <td><strong>Potência:</strong></td>
+          <td><%= item.potencia %></td>
+        </tr>
+          <tr>
+          <td><strong>Unidade de medida:</strong></td>
+          <td><%= item.unidade_medida %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Tubulação:</strong></td>
+          <td><%= item.tubulacao %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Potência:</strong></td>
+          <td><%= item.potencia %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Quantidade de tubulação:</strong></td>
+          <td><%= item.qtdtubulacao %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Extras:</strong></td>
+          <td><%= item.extra %><td>
+        </tr>
+
+        <tr>
+          <td><strong>Quantidade de extras:</strong></td>
+          <td><%= item.qtdextra %></td>
+        </tr>
+        
+          <tr>
+          <td><strong>Valor:</strong></td>
+          <td><%= item.valor %></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Informações adicionais:</strong></td>
+          <td><%= item.info %></td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td><%= link_to 'Excluir',  [item.orcamento, item], method: :delete, data: { confirm: 'Você realmente deseja excluir?' },  class: "action_button" %></td>
+        </tr>
+      </table>  
   <% end %>
 <% end %>
 
