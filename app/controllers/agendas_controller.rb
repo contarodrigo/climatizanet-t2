@@ -5,9 +5,7 @@ class AgendasController < ApplicationController
   # GET /agendas
   # GET /agendas.json
   def index
-    cliente = Cliente.find(params[:cliente_id])
-
-    @agendas = cliente.agendas.page params[:page]
+    @agendas = recursos.page params[:page]
   end
 
   # GET /agendas/1
@@ -69,6 +67,19 @@ class AgendasController < ApplicationController
 
       @agenda.destroy
       redirect_to cliente_agendas_url
+  end
+
+  protected
+  def cliente
+    @cliente ||= Cliente.find_by(:id => params[:cliente_id]) # ou Cliente.find_by_id(params[:id]) para Rails < 4
+  end
+
+  def recursos
+    if cliente
+      cliente.agendas
+    else
+      Agenda.all # ou Agenda.scoped para Rails < 4
+    end
   end
 
   private

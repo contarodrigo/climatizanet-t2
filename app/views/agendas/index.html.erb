@@ -5,9 +5,11 @@
 <% @agendas.each do |agenda| %>
 
   <article>
-    <p class="created">
-      <strong> <%= agenda.cliente.nome %> </strong> 
-    </p>    
+    <% if agenda.cliente %>  
+      <p class="created">
+        <strong> <%= agenda.cliente.nome %> </strong> 
+      </p>  
+    <% end %>  
     <p class="created">
       <%= l agenda.data, format: :long_agenda %>
     </p>
@@ -21,12 +23,16 @@
       <%= agenda.observacao %>
     </p> 
 
-    <t><%= link_to 'Mostrar', [agenda.cliente, agenda] , class: "action_button" %></t>
-    <t><%= link_to 'Editar', edit_cliente_agenda_path(agenda.cliente, agenda) , class: "action_button" %></t>
-    <t><%= link_to 'Excluir',  [agenda.cliente, agenda], method: :delete, data: { confirm: 'Você realmente deseja excluir?' },  class: "action_button" %></t>
+    <% if agenda.cliente %> 
+      <t><%= link_to 'Mostrar', [agenda.cliente, agenda] , class: "action_button" %></t>
+      <t><%= link_to 'Editar', edit_cliente_agenda_path(agenda.cliente, agenda) , class: "action_button" %></t>
+      <t><%= link_to 'Excluir',  [agenda.cliente, agenda], method: :delete, data: { confirm: 'Você realmente deseja excluir?' },  class: "action_button" %></t>
+    <% end %>    
   </article>
 <% end %>
 
 <%= paginate @agendas %>
 
+    <% if @cliente %>
 <%= link_to 'Nova Agenda', new_cliente_agenda_path, id: "newButton",  class: "newButton"%>
+    <% end %>   
