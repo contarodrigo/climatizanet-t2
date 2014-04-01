@@ -1,7 +1,7 @@
 $header-height: 50px;
 $content-width: 700px;
 
-$sans-serif-families: "Helvetica",sans-serif;
+$sans-serif-families: "Helvetica Neue", "Helvetica",sans-serif;
 
 $error-text-color: #B94A48;
 $success-text-color: #468847;
@@ -300,7 +300,7 @@ article {
 
 .campo-left {
 	float: left;
-		margin-right: 30px;
+	margin-right: 30px;
 }
 
 .campo-right {
@@ -341,3 +341,79 @@ article {
 	border: 1px solid #ccc;
 	@include shadow(#ccc, 0, 3px, 6px);
 }
+
+
+.buttomSuperior .container {
+	width: 600px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: center;
+	background-color: transparent;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	clear:both;
+}
+
+.buttomSuperior .container .h1 {
+	font-size: 60px;
+	font-family: 'Audiowide', serif; 
+}
+
+.btn-lg {
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.33;
+	border-radius: 6px;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #009ACD;
+	border-color: #357ebd;
+}
+
+.btn {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+}
+
+.featurette-divider {
+	margin: 20px 0;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.col-md-5 {
+	width: 41.66666667%;
+	float: left;
+
+}
+
+.col-md-7 {
+	width: 58.33333333%;
+	float: right;
+}
+
+.featurette-heading {
+	font-size: 50px;
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -1px;
+
+}
+
+.featurette-image {
+	max-width: 100%;
+
+}
+
