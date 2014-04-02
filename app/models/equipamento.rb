@@ -8,7 +8,7 @@ class Equipamento < ActiveRecord::Base
 
 	def self.search(query)
 		if query.present?
-			where(['descricao LIKE :query ', query: "%#{query}%"])
+			where(['descricao ILIKE :query ', query: "%#{query}%"])
 		else
 			scoped
 		end

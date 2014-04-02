@@ -47,3 +47,5 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem "font-awesome-rails"
 
 gem 'kaminari'
+
+gem 'pg'
