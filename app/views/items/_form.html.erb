@@ -80,7 +80,14 @@
     <%= f.label "Informações adicionais" %>
     <%= f.text_area :info %>
     <%= error_tag @item, :info %>
-  </div> 
+  </div>
+
+  <div class="select">
+    <%= f.label "Situação" %>
+    <%= f.select :situacao, ['Ativo','Inativo'] %>
+    <%= error_tag @item, :situacao %>
+  </div> </br>
+
   </br>
   <div class="actions">
     <%= f.submit %>

@@ -17,6 +17,12 @@
     <%= error_tag @orcamento, :validade %>
   </div>
 
+  <div class="select">
+    <%= f.label "Situação" %>
+    <%= f.select :situacao, ['Pendente','Aprovado','Reprovado'] %>
+    <%= error_tag @orcamento, :situacao %>
+  </div> </br>
+
   </br>
   
   <div class="actions">
